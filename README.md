@@ -10,7 +10,7 @@ npm run dev     # http://localhost:3000
 
 ## Wat zit erin
 - Start-pop-up ("Mededeling"), configurator ("Stel je toets samen") en toetsscherm met groene "Verder"-knoppen.
-- 3 uitgewerkte casussen: Opiumwet + Sv 96b (agent), Gemeentewet noodbevel (openbare orde), HOvJ-doorzoeking woning (Sv 97 + Awbi).
+- 6 uitgewerkte casussen: Opiumwet + Sv 96b, Gemeentewet noodbevel, HOvJ-doorzoeking woning (Sv 97 + Awbi), WWM-pistool (art. 26), WVW-bloedonderzoek (art. 163) en Wid-identiteitscontrole (art. 2 Wid + art. 8 Pw).
 - Per aspect feedback op kernpunten, modelantwoord, wettekst met peildatum en link naar wetten.overheid.nl / uitspraken.rechtspraak.nl.
 - Zwakke punten worden in de browser (localStorage) onthouden; "Oefen mijn zwakke punten" kiest casussen op die onderdelen.
 

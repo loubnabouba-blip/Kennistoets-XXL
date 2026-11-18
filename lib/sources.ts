@@ -14,6 +14,10 @@ const SV = "BWBR0001903";
 const AWBI = "BWBR0006763";
 const OW = "BWBR0001941";
 const GW = "BWBR0005416";
+const WWM = "BWBR0008804";
+const WVW = "BWBR0006622";
+const WID = "BWBR0006297";
+const PW = "BWBR0031788";
 
 export const BRONNEN: BronArtikel[] = [
   // ---------- Wetboek van Strafvordering ----------
@@ -196,6 +200,104 @@ export const BRONNEN: BronArtikel[] = [
     volledig: true,
     peildatum: "2026-10-01",
     url: wettenUrl(GW, "176"),
+  },
+  // ---------- Sv art. 56 ----------
+  {
+    id: "sv-56-1",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "56",
+    lid: "1",
+    tekst:
+      "De officier van justitie of de hulpofficier voor wie de verdachte wordt geleid of die zelf de verdachte heeft aangehouden, kan, bij het bestaan van ernstige bezwaren tegen deze, in het belang van het onderzoek bepalen dat deze aan zijn lichaam of kleding zal worden onderzocht. […]",
+    volledig: false,
+    peildatum: null,
+    url: wettenUrl(SV, "56"),
+  },
+  // ---------- Wet wapens en munitie ----------
+  {
+    id: "ww-13-1",
+    wet: "Wet wapens en munitie",
+    bwb: WWM,
+    artikel: "13",
+    lid: "1",
+    tekst:
+      "Het is verboden een wapen van categorie I te vervaardigen, te transformeren, voor derden te herstellen, over te dragen, voorhanden te hebben, te dragen, te vervoeren, te doen binnenkomen of te doen uitgaan.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(WWM, "13"),
+  },
+  {
+    id: "ww-26-1",
+    wet: "Wet wapens en munitie",
+    bwb: WWM,
+    artikel: "26",
+    lid: "1",
+    tekst: "Het is verboden een wapen of munitie van de categorieën II en III voorhanden te hebben.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(WWM, "26"),
+  },
+  // ---------- Wegenverkeerswet 1994 ----------
+  {
+    id: "wvw-163-1",
+    wet: "Wegenverkeerswet 1994",
+    bwb: WVW,
+    artikel: "163",
+    lid: "1",
+    tekst:
+      "Bij verdenking dat de bestuurder van een voertuig heeft gehandeld in strijd met artikel 8, kan de opsporingsambtenaar hem bevelen zijn medewerking te verlenen aan een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel a, en artikel 8 […]",
+    volledig: false,
+    peildatum: "2026-09-01",
+    url: wettenUrl(WVW, "163"),
+  },
+  {
+    id: "wvw-163-4",
+    wet: "Wegenverkeerswet 1994",
+    bwb: WVW,
+    artikel: "163",
+    lid: "4",
+    tekst:
+      "[…] indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, en artikel 8, derde lid, onderdeel b. […]",
+    volledig: false,
+    peildatum: "2006-11-29",
+    url: wettenUrl(WVW, "163"),
+  },
+  {
+    id: "wvw-163-5",
+    wet: "Wegenverkeerswet 1994",
+    bwb: WVW,
+    artikel: "163",
+    lid: "5",
+    tekst:
+      "Indien de bestuurder zijn op grond van het vierde lid gevraagde toestemming niet verleent, kan de officier van justitie, een hulpofficier van justitie of een van de daartoe bij regeling van Onze Minister […] aangewezen […]",
+    volledig: false,
+    peildatum: "2019-07-01",
+    url: wettenUrl(WVW, "163"),
+  },
+  // ---------- Wet op de identificatieplicht / Politiewet 2012 ----------
+  {
+    id: "wid-2",
+    wet: "Wet op de identificatieplicht",
+    bwb: WID,
+    artikel: "2",
+    tekst:
+      "Een ieder die de leeftijd van veertien jaar heeft bereikt, is verplicht op de eerste vordering van een ambtenaar als bedoeld in artikel 8 van de Politiewet 2012 of artikel 6a van de Wet op de bijzondere opsporingsdiensten, een identiteitsbewijs […]",
+    volledig: false,
+    peildatum: null,
+    url: wettenUrl(WID, "2"),
+  },
+  {
+    id: "pw-8-1",
+    wet: "Politiewet 2012",
+    bwb: PW,
+    artikel: "8",
+    lid: "1",
+    tekst:
+      "Een ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak, is bevoegd tot het vorderen van inzage van een identiteitsbewijs als bedoeld in artikel 1 van de Wet op de identificatieplicht van personen, voor zover dat […]",
+    volledig: false,
+    peildatum: "2026-06-12",
+    url: wettenUrl(PW, "8"),
   },
 ];
 

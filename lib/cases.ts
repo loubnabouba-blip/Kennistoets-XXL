@@ -419,6 +419,348 @@ export const CASUS_POOL: Casus[] = [
       },
     ],
   },
+  {
+    id: "c4-wwm-pistool",
+    titel: "Pistool in de jaszak op het stationsplein",
+    niveau: ["agent", "gemengd"],
+    wetten: ["wwm", "sv"],
+    vraag:
+      "Welke bevoegdheden hebben de agenten bij Bakir en wat moet er daarna gebeuren? Werk de vijf aspecten uit.",
+    situatie: [
+      "Om 01.15 uur zien agenten Smit en De Vries op het stationsplein hoe Bakir een pistool uit zijn jaszak haalt en aan een vriend laat zien. De agenten lopen op hem af en nemen het pistool af. Het is een vuurwapen van categorie III. Bakir heeft geen verlof en kan ook geen ontheffing tonen.",
+      "De agenten willen Bakir aanhouden en zijn kleding laten onderzoeken op meer wapens of munitie.",
+    ],
+    bijlage: {
+      titel: "Aantekening agent Smit (fictief)",
+      inhoud:
+        "01.15 uur: pistool waargenomen in de hand van Bakir. 01.16 uur: pistool veiliggesteld. 01.17 uur: Bakir aangehouden. Geen toestemming gevraagd voor onderzoek aan kleding.",
+    },
+    uitspraken: [],
+    aspecten: [
+      {
+        key: "grondslag",
+        modelantwoord:
+          "Het voorhanden hebben van een wapen van categorie III is verboden op grond van art. 26 lid 1 WWM (voor categorie I geldt art. 13 lid 1). De aanhouding op heterdaad berust op art. 53 Sv; het onderzoek aan kleding en lichaam op art. 56 Sv.",
+        kernpunten: [
+          {
+            id: "c4-g1",
+            label: "Art. 26 lid 1 WWM (categorie II/III voorhanden hebben)",
+            patronen: ["\\b26\\b", "wwm", "wet wapens"],
+            toelichting:
+              "Art. 26 lid 1 verbiedt het voorhanden hebben van een wapen of munitie van de categorieën II en III. Voor categorie I staat het verbod in art. 13 lid 1.",
+            bronIds: ["ww-26-1", "ww-13-1"],
+          },
+          {
+            id: "c4-g2",
+            label: "Art. 53 Sv (aanhouding op heterdaad)",
+            patronen: ["\\b53\\b"],
+            toelichting: "De aanhouding bij ontdekking op heterdaad volgt uit art. 53 Sv.",
+            bronIds: ["sv-53-2"],
+          },
+          {
+            id: "c4-g3",
+            label: "Art. 56 Sv (onderzoek aan kleding of lichaam)",
+            patronen: ["\\b56\\b"],
+            toelichting: "Een onderzoek aan kleding of lichaam van de verdachte is geregeld in art. 56 Sv.",
+            bronIds: ["sv-56-1"],
+          },
+        ],
+      },
+      {
+        key: "verdenking",
+        modelantwoord:
+          "Er is ontdekking op heterdaad van een strafbaar feit: het voorhanden hebben van een pistool zonder verlof, waargenomen door de agenten zelf. Dat geeft ook een redelijk vermoeden van schuld (art. 27 Sv). Voor het onderzoek aan kleding zijn bovendien ernstige bezwaren vereist (art. 56 lid 1).",
+        kernpunten: [
+          {
+            id: "c4-v1",
+            label: "Heterdaad of redelijk vermoeden van schuld",
+            patronen: ["heterdaad", "redelijk vermoeden", "\\b27\\b"],
+            toelichting: "De agenten namen het strafbare feit zelf waar; dat is ontdekking op heterdaad.",
+            bronIds: ["sv-53-2", "sv-27-1"],
+          },
+          {
+            id: "c4-v2",
+            label: "Ernstige bezwaren voor onderzoek aan kleding",
+            patronen: ["ernstige bezwaren"],
+            toelichting: "Art. 56 lid 1 Sv vereist het bestaan van ernstige bezwaren tegen de verdachte.",
+            bronIds: ["sv-56-1"],
+          },
+        ],
+      },
+      {
+        key: "bevoegd",
+        modelantwoord:
+          "De agent (opsporingsambtenaar) mag Bakir zelf aanhouden en brengt hem ten spoedigste over voor voorgeleiding aan de hulpofficier van justitie of de officier van justitie. De beslissing dat Bakir aan zijn kleding of lichaam wordt onderzocht, neemt de officier van justitie of de hulpofficier.",
+        kernpunten: [
+          {
+            id: "c4-b1",
+            label: "Agent houdt zelf aan bij heterdaad",
+            patronen: ["agent", "opsporingsambtenaar", "zelf"],
+            toelichting: "Art. 53 Sv geeft de opsporingsambtenaar de bevoegdheid bij ontdekking op heterdaad.",
+            bronIds: ["sv-53-2"],
+          },
+          {
+            id: "c4-b2",
+            label: "OvJ of HOvJ bepaalt onderzoek aan kleding/lichaam",
+            patronen: ["hulpofficier", "hovj", "officier van justitie", "\\bovj\\b"],
+            toelichting: "Art. 56 lid 1 Sv noemt de officier van justitie of de hulpofficier.",
+            bronIds: ["sv-56-1"],
+          },
+        ],
+      },
+      {
+        key: "vorm",
+        modelantwoord:
+          "De aanhouder brengt de verdachte ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier of de officier van justitie (art. 53 lid 2 Sv). Het onderzoek aan kleding of lichaam volgt op een bepaling van de OvJ of HOvJ (art. 56 lid 1).",
+        kernpunten: [
+          {
+            id: "c4-f1",
+            label: "Ten spoedigste overbrengen voor voorgeleiding",
+            patronen: ["spoedig", "voorgeleid", "voorleid", "overbrengen", "overgebracht"],
+            toelichting:
+              "Art. 53 lid 2 Sv: de aanhouder brengt de verdachte ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de HOvJ of OvJ.",
+            bronIds: ["sv-53-2"],
+          },
+          {
+            id: "c4-f2",
+            label: "Bepaling OvJ/HOvJ vóór onderzoek aan kleding",
+            patronen: ["bepal", "bevel", "opdracht"],
+            toelichting: "Het onderzoek aan kleding of lichaam gebeurt na een bepaling van de OvJ of HOvJ.",
+            bronIds: ["sv-56-1"],
+          },
+        ],
+      },
+      {
+        key: "proportionaliteit",
+        modelantwoord:
+          "Het onderzoek aan kleding of lichaam moet in het belang van het onderzoek zijn en vereist ernstige bezwaren; het mag niet verder gaan dan daarvoor nodig is.",
+        kernpunten: [
+          {
+            id: "c4-p1",
+            label: "In het belang van het onderzoek / niet verder dan nodig",
+            patronen: ["belang van het onderzoek", "proportion", "subsidiar", "noodzak", "evenredig", "niet verder"],
+            toelichting: "Art. 56 lid 1 koppelt het onderzoek aan het belang van het onderzoek.",
+            bronIds: ["sv-56-1"],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "c5-wvw-alcohol",
+    titel: "Slingerende bestuurder en bloedonderzoek",
+    niveau: ["agent", "gemengd"],
+    wetten: ["wvw", "sv"],
+    vraag:
+      "Welke bevelen mag de agent geven en wie mag een bevel tot bloedonderzoek geven als Mertens weigert? Werk de vijf aspecten uit.",
+    situatie: [
+      "Om 02.10 uur ziet agent Willems een auto slingeren over de weg. Hij stopt de auto. Bestuurder Mertens ruikt naar alcohol en praat onduidelijk. Er bestaat verdenking dat Mertens in strijd met art. 8 WVW heeft gehandeld.",
+      "Willems beveelt Mertens mee te werken aan een ademonderzoek. Mertens blaast meerdere keren onvoldoende door, waardoor het ademonderzoek niet wordt voltooid. Daarna vraagt Willems om toestemming voor een bloedonderzoek. Mertens weigert.",
+    ],
+    bijlage: {
+      titel: "Verloop (fictief)",
+      inhoud:
+        "02.10 auto gestopt. 02.14 bevel medewerking ademonderzoek. 02.20 drie pogingen, geen voltooid onderzoek. 02.24 toestemming bloedonderzoek gevraagd, geweigerd.",
+    },
+    uitspraken: [],
+    aspecten: [
+      {
+        key: "grondslag",
+        modelantwoord:
+          "Art. 163 WVW 1994: lid 1 (bevel tot medewerking aan een ademonderzoek bij verdenking van overtreding van art. 8), lid 4 (toestemming vragen voor bloedonderzoek) en lid 5 (bevel bij weigering).",
+        kernpunten: [
+          {
+            id: "c5-g1",
+            label: "Art. 163 lid 1 WVW (bevel medewerking ademonderzoek)",
+            patronen: ["\\b163\\b"],
+            toelichting: "Art. 163 lid 1 WVW geeft de opsporingsambtenaar de bevoegdheid tot het bevel.",
+            bronIds: ["wvw-163-1"],
+          },
+          {
+            id: "c5-g2",
+            label: "Art. 163 lid 4 en 5 WVW (bloedonderzoek)",
+            patronen: ["lid 4", "vierde lid", "lid 5", "vijfde lid"],
+            toelichting: "Lid 4 regelt de vraag om toestemming; lid 5 het bevel bij weigering.",
+            bronIds: ["wvw-163-4", "wvw-163-5"],
+          },
+        ],
+      },
+      {
+        key: "verdenking",
+        modelantwoord:
+          "Het bevel tot medewerking vereist verdenking dat de bestuurder in strijd met art. 8 WVW heeft gehandeld (rijden onder invloed).",
+        kernpunten: [
+          {
+            id: "c5-v1",
+            label: "Verdenking overtreding art. 8 WVW",
+            patronen: ["verdenking", "vermoeden", "verdacht", "\\b8\\b"],
+            toelichting: "Art. 163 lid 1 begint met: bij verdenking dat de bestuurder heeft gehandeld in strijd met art. 8.",
+            bronIds: ["wvw-163-1"],
+          },
+        ],
+      },
+      {
+        key: "bevoegd",
+        modelantwoord:
+          "De opsporingsambtenaar mag het bevel tot medewerking aan het ademonderzoek geven en om toestemming voor bloedonderzoek vragen. Bij weigering kan de officier van justitie, een hulpofficier van justitie of een daartoe aangewezen ambtenaar het bevel geven (lid 5).",
+        kernpunten: [
+          {
+            id: "c5-b1",
+            label: "Opsporingsambtenaar geeft bevel ademonderzoek",
+            patronen: ["opsporingsambtenaar", "agent"],
+            toelichting: "Art. 163 lid 1 noemt de opsporingsambtenaar.",
+            bronIds: ["wvw-163-1"],
+          },
+          {
+            id: "c5-b2",
+            label: "Bevel na weigering: OvJ, HOvJ of aangewezen ambtenaar",
+            patronen: ["hulpofficier", "hovj", "officier van justitie", "\\bovj\\b", "aangewezen"],
+            toelichting: "Art. 163 lid 5 noemt de OvJ, de HOvJ of een daartoe aangewezen ambtenaar.",
+            bronIds: ["wvw-163-5"],
+          },
+        ],
+      },
+      {
+        key: "vorm",
+        modelantwoord:
+          "Eerst moet om toestemming voor het bloedonderzoek worden gevraagd (lid 4), en wel nadat de medewerking niet tot een voltooid ademonderzoek heeft geleid. Pas bij weigering kan het bevel van lid 5 worden gegeven.",
+        kernpunten: [
+          {
+            id: "c5-f1",
+            label: "Eerst toestemming vragen",
+            patronen: ["toestemming"],
+            toelichting: "Lid 4: de opsporingsambtenaar kan de verdachte vragen of hij toestemming geeft.",
+            bronIds: ["wvw-163-4"],
+          },
+          {
+            id: "c5-f2",
+            label: "Ademonderzoek niet voltooid",
+            patronen: ["niet voltooid", "niet (is )?(gelukt|voltooid)", "geen voltooid", "onvoldoende"],
+            toelichting: "Lid 4: bij een niet voltooid ademonderzoek kan toestemming voor een bloedonderzoek worden gevraagd.",
+            bronIds: ["wvw-163-4"],
+          },
+        ],
+      },
+      {
+        key: "proportionaliteit",
+        modelantwoord:
+          "De volgorde is: eerst het minst ingrijpende middel (ademonderzoek), daarna toestemming vragen voor bloed, en pas bij weigering een bevel. Dat is de subsidiariteit in de wettelijke opbouw.",
+        kernpunten: [
+          {
+            id: "c5-p1",
+            label: "Minst ingrijpend eerst (adem, dan bloed)",
+            patronen: ["subsidiar", "proportion", "lichter", "minst ingrijpend", "eerst .*adem", "adem.*eerst", "volgorde"],
+            toelichting: "De opbouw van lid 1, 4 en 5 laat zien dat ingrijpender middelen pas later komen.",
+            bronIds: ["wvw-163-1", "wvw-163-4"],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "c6-wid-identiteitscontrole",
+    titel: "Identiteitscontrole bij overlast op een hangplek",
+    niveau: ["agent", "gemengd"],
+    wetten: ["wid", "pw"],
+    vraag:
+      "Mogen de agenten Yusuf en Lotte om een identiteitsbewijs vragen en moeten zij dat tonen? Werk de vijf aspecten uit.",
+    situatie: [
+      "Na meldingen van overlast surveilleren agenten bij een hangplek. Zij vragen twee jongeren naar hun identiteitsbewijs: Yusuf (17) en Lotte (13). Yusuf zegt dat hij zijn bewijs niet laat zien. Lotte heeft geen bewijs bij zich.",
+    ],
+    bijlage: {
+      titel: "Aantekening agent (fictief)",
+      inhoud:
+        "Doel van de vraag: vaststellen wie bij de overlast betrokken was. Yusuf (17) weigert. Lotte (13) heeft niets bij zich. Geen strafbaar feit waargenomen.",
+    },
+    uitspraken: [],
+    aspecten: [
+      {
+        key: "grondslag",
+        modelantwoord:
+          "De toonplicht staat in art. 2 Wet op de identificatieplicht. De bevoegdheid van de politieambtenaar om inzage van een identiteitsbewijs te vorderen staat in art. 8 lid 1 Politiewet 2012.",
+        kernpunten: [
+          {
+            id: "c6-g1",
+            label: "Art. 2 Wid (toonplicht)",
+            patronen: ["\\bwid\\b", "identificatieplicht", "\\b2\\b"],
+            toelichting: "Art. 2 Wid verplicht ieder vanaf veertien jaar op de eerste vordering een identiteitsbewijs ter inzage aan te bieden.",
+            bronIds: ["wid-2"],
+          },
+          {
+            id: "c6-g2",
+            label: "Art. 8 Politiewet 2012 (bevoegdheid vorderen)",
+            patronen: ["politiewet", "\\bpw\\b", "\\b8\\b"],
+            toelichting: "Art. 8 lid 1 Pw 2012 geeft de politieambtenaar de bevoegdheid tot het vorderen van inzage.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+      {
+        key: "verdenking",
+        modelantwoord:
+          "Er is geen verdenking van een strafbaar feit nodig. De vordering moet wel noodzakelijk zijn voor de uitoefening van de politietaak; de bron bevat de volledige voorwaarde.",
+        kernpunten: [
+          {
+            id: "c6-v1",
+            label: "Noodzakelijk voor de politietaak (geen verdenking vereist)",
+            patronen: ["noodzak", "politietaak", "geen verdenking", "taak"],
+            toelichting:
+              "Art. 8 lid 1 Pw 2012 koppelt de vordering aan wat nodig is voor de uitoefening van de politietaak. De snapshot is een fragment: lees de volledige voorwaarde in de bron.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+      {
+        key: "bevoegd",
+        modelantwoord:
+          "Een ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak (art. 8 lid 1 Pw 2012).",
+        kernpunten: [
+          {
+            id: "c6-b1",
+            label: "Politieambtenaar aangesteld voor de politietaak",
+            patronen: ["politie", "agent", "ambtenaar"],
+            toelichting: "Art. 8 lid 1 Pw 2012 noemt de ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+      {
+        key: "vorm",
+        modelantwoord:
+          "De plicht geldt vanaf veertien jaar en moet worden nagekomen op de eerste vordering. Lotte (13) valt buiten de toonplicht; Yusuf (17) valt eronder.",
+        kernpunten: [
+          {
+            id: "c6-f1",
+            label: "Leeftijdsgrens veertien jaar",
+            patronen: ["\\b14\\b", "veertien"],
+            toelichting: "Art. 2 Wid geldt voor een ieder die de leeftijd van veertien jaar heeft bereikt.",
+            bronIds: ["wid-2"],
+          },
+          {
+            id: "c6-f2",
+            label: "Op de eerste vordering",
+            patronen: ["eerste vordering", "op vordering", "vordering"],
+            toelichting: "Het identiteitsbewijs moet op de eerste vordering ter inzage worden aangeboden.",
+            bronIds: ["wid-2"],
+          },
+        ],
+      },
+      {
+        key: "proportionaliteit",
+        modelantwoord:
+          "De vordering moet redelijk en noodzakelijk zijn voor de taak: hier is de vraag naar identiteit gekoppeld aan de overlastmeldingen. Bij een jongere onder veertien bestaat geen toonplicht.",
+        kernpunten: [
+          {
+            id: "c6-p1",
+            label: "Noodzaak en redelijkheid van de vordering",
+            patronen: ["noodzak", "redelijk", "proportion", "subsidiar", "evenredig"],
+            toelichting: "Art. 8 lid 1 Pw 2012 beperkt de vordering tot wat voor de taak nodig is.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export const getCasus = (id: string) => CASUS_POOL.find((c) => c.id === id);
