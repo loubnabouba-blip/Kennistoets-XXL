@@ -5,7 +5,12 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 // TIJDELIJK: vergelijkt alle snapshots met de live tekst. Wordt verwijderd.
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/\[…\]/g, "").trim();
-export async function GET() {
+export async function GET(req: Request) {
+  const q = new URL(req.url).searchParams;
+  if (q.get("bwb") && q.get("artikel")) {
+    const l = await haalArtikelLive(q.get("bwb")!, q.get("artikel")!);
+    return NextResponse.json({ peil: l.peildatum, leden: l.leden, hele: l.heleTekst.slice(0, 3000) });
+  }
   const uit = [];
   for (const b of BRONNEN) {
     uit.push(await (async () => {
