@@ -6,9 +6,9 @@ export async function GET(req: Request) {
   const bwb = u.get("bwb") ?? "BWBR0008804";
   const target = u.get("url");
   const url =
-    target && target.startsWith("https://repository.")
+    target && /^https:\/\/(repository|zoekservice)\./.test(target)
       ? target
-      : `https://repository.overheid.nl/sru?x-connection=BWB&operation=searchRetrieve&version=2.0&query=${encodeURIComponent("dcterms.identifier==" + bwb)}&maximumRecords=1`;
+      : `https://zoekservice.overheid.nl/sru/Search?x-connection=BWB&operation=searchRetrieve&version=1.2&query=${encodeURIComponent("dcterms.identifier==" + bwb)}&maximumRecords=1`;
   try {
     const r = await fetch(url, { cache: "no-store" });
     const t = await r.text();
