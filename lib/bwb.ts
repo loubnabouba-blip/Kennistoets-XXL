@@ -1,11 +1,8 @@
 /**
- * Live koppeling met de officiële bronnen (BWB / SRU).
- * LET OP: deze adapter kon niet worden getest vanuit de ontwikkelomgeving (netwerk geblokkeerd).
- * Hij is bewust defensief en geïsoleerd: faalt iets, dan valt /api/wet terug op de snapshot
+ * Live koppeling met de officiële bronnen (manifest + toestand-XML van repository.officiele-overheidspublicaties.nl).
+ * Getest op de Vercel-deployment (18-11-2026). Hij is bewust defensief en geïsoleerd: faalt iets, dan valt /api/wet terug op de snapshot
  * en toont de UI dat het géén live data is.
  */
-const SRU = "https://repository.overheid.nl/sru";
-
 export interface LiveArtikel {
   peildatum: string | null;
   leden: Record<string, string>;

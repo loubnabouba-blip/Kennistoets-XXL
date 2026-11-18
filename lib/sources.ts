@@ -42,7 +42,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "De opsporingsambtenaar die een verdachte bij ontdekking op heterdaad aanhoudt, brengt deze ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier van justitie of de officier van justitie.",
     volledig: true,
-    peildatum: "2018-10-16",
+    peildatum: "2026-07-01",
     url: wettenUrl(SV, "53"),
   },
   {
@@ -54,7 +54,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "In geval van ontdekking op heterdaad van een strafbaar feit of in geval van verdenking van een misdrijf als omschreven in artikel 67, eerste lid, is de opsporingsambtenaar bevoegd ter inbeslagneming een vervoermiddel, met uitzondering van het woongedeelte zonder toestemming van de bewoner, te doorzoeken en zich daartoe de toegang tot dit vervoermiddel te verschaffen.",
     volledig: true,
-    peildatum: null,
+    peildatum: "2026-07-01",
     url: wettenUrl(SV, "96b"),
   },
   {
@@ -66,7 +66,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "In geval van ontdekking op heterdaad van een strafbaar feit of in geval van verdenking van een misdrijf als omschreven in artikel 67, eerste lid, kan de officier van justitie, bij dringende noodzakelijkheid en indien het optreden van de rechter-commissaris niet kan worden afgewacht, ter inbeslagneming de volgende plaatsen doorzoeken: a. een woning zonder toestemming van de bewoner, en […]",
     volledig: false,
-    peildatum: "2017-06-17",
+    peildatum: "2026-07-01",
     url: wettenUrl(SV, "97"),
   },
   {
@@ -78,7 +78,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "Kan ook het optreden van de officier van justitie niet worden afgewacht, dan komt de bevoegdheid tot doorzoeking toe aan de hulpofficier. Het eerste en het tweede lid zijn van overeenkomstige toepassing.",
     volledig: true,
-    peildatum: "2019-01-01",
+    peildatum: "2026-07-01",
     url: wettenUrl(SV, "97"),
   },
   // ---------- Algemene wet op het binnentreden ----------
@@ -91,7 +91,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "Voor het binnentreden in een woning zonder toestemming van de bewoner is een schriftelijke machtiging vereist, tenzij en voor zover bij wet aan rechters, rechterlijke colleges, leden van het openbaar ministerie, burgemeesters, gerechtsdeurwaarders en belastingdeurwaarders de bevoegdheid is toegekend tot het binnentreden in een woning zonder toestemming van de bewoner. De machtiging wordt zo mogelijk getoond.",
     volledig: true,
-    peildatum: null,
+    peildatum: "2010-07-01",
     url: wettenUrl(AWBI, "2"),
   },
   {
@@ -103,7 +103,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "Een schriftelijke machtiging als bedoeld in het eerste lid is niet vereist, indien ter voorkoming of bestrijding van ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen terstond in de woning moet worden binnengetreden.",
     volledig: true,
-    peildatum: null,
+    peildatum: "2010-07-01",
     url: wettenUrl(AWBI, "2"),
   },
   {
@@ -111,11 +111,11 @@ export const BRONNEN: BronArtikel[] = [
     wet: "Algemene wet op het binnentreden",
     bwb: AWBI,
     artikel: "3",
-    // Het lidnummer is in de geraadpleegde bron niet bevestigd.
+    lid: "1",
     tekst:
-      "Bij dringende noodzakelijkheid en indien het optreden van de advocaat-generaal of de officier van justitie niet kan worden afgewacht, komt de bevoegdheid tot het geven van een machtiging toe aan de hulpofficier van justitie.",
-    volledig: true,
-    peildatum: null,
+      "Bevoegd tot het geven van een machtiging tot binnentreden zijn: a. de advocaat-generaal bij het ressortsparket […] c. de hulpofficier van justitie […]",
+    volledig: false,
+    peildatum: "2010-07-01",
     url: wettenUrl(AWBI, "3"),
   },
   // ---------- Opiumwet ----------
@@ -186,7 +186,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "De burgemeester laat tot maatregelen van geweld niet overgaan dan na het doen van de nodige waarschuwing.",
     volledig: true,
-    peildatum: "2013-07-01",
+    peildatum: "2026-10-01",
     url: wettenUrl(GW, "175"),
   },
   {
@@ -209,9 +209,9 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "56",
     lid: "1",
     tekst:
-      "De officier van justitie of de hulpofficier voor wie de verdachte wordt geleid of die zelf de verdachte heeft aangehouden, kan, bij het bestaan van ernstige bezwaren tegen deze, in het belang van het onderzoek bepalen dat deze aan zijn lichaam of kleding zal worden onderzocht. […]",
-    volledig: false,
-    peildatum: null,
+      "De officier van justitie of de hulpofficier voor wie de verdachte wordt geleid of die zelf de verdachte heeft aangehouden, kan, bij het bestaan van ernstige bezwaren tegen deze, in het belang van het onderzoek bepalen dat deze aan zijn lichaam of kleding zal worden onderzocht.",
+    volledig: true,
+    peildatum: "2026-07-01",
     url: wettenUrl(SV, "56"),
   },
   // ---------- Wet wapens en munitie ----------
@@ -260,7 +260,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "[…] indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, en artikel 8, derde lid, onderdeel b. […]",
     volledig: false,
-    peildatum: "2006-11-29",
+    peildatum: "2026-09-01",
     url: wettenUrl(WVW, "163"),
   },
   {
@@ -272,7 +272,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "Indien de bestuurder zijn op grond van het vierde lid gevraagde toestemming niet verleent, kan de officier van justitie, een hulpofficier van justitie of een van de daartoe bij regeling van Onze Minister […] aangewezen […]",
     volledig: false,
-    peildatum: "2019-07-01",
+    peildatum: "2026-09-01",
     url: wettenUrl(WVW, "163"),
   },
   // ---------- Wet op de identificatieplicht / Politiewet 2012 ----------
@@ -284,7 +284,7 @@ export const BRONNEN: BronArtikel[] = [
     tekst:
       "Een ieder die de leeftijd van veertien jaar heeft bereikt, is verplicht op de eerste vordering van een ambtenaar als bedoeld in artikel 8 van de Politiewet 2012 of artikel 6a van de Wet op de bijzondere opsporingsdiensten, een identiteitsbewijs […]",
     volledig: false,
-    peildatum: null,
+    peildatum: "2026-10-01",
     url: wettenUrl(WID, "2"),
   },
   {

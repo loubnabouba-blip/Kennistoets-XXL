@@ -366,7 +366,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "vorm",
         modelantwoord:
-          "Zonder toestemming van de bewoner is voor het binnentreden een schriftelijke machtiging vereist (art. 2 lid 1 Awbi), die zo mogelijk wordt getoond. De uitzondering in lid 3 betreft ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen; gevaar voor wegmaking van bewijs valt daar niet zonder meer onder. Bij dringende noodzakelijkheid kan de HOvJ de machtiging geven als de OvJ niet kan worden afgewacht.",
+          "Zonder toestemming van de bewoner is voor het binnentreden een schriftelijke machtiging vereist (art. 2 lid 1 Awbi), die zo mogelijk wordt getoond. De uitzondering in lid 3 betreft ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen; gevaar voor wegmaking van bewijs valt daar niet zonder meer onder. Art. 3 lid 1 Awbi noemt de hulpofficier van justitie onder de ambtenaren die een machtiging mogen geven; lees in de bron onder welke voorwaarden.",
         kernpunten: [
           {
             id: "c3-f1",

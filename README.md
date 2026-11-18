@@ -17,8 +17,7 @@ npm run dev     # http://localhost:3000
 ## Bronnen en nauwkeurigheid
 - `app/api/wet` en `app/api/uitspraak` proberen **live** op te halen (SRU/BWB van repository.overheid.nl en data.rechtspraak.nl).
   Lukt dat niet, dan wordt de **geverifieerde snapshot** uit `lib/sources.ts` getoond met een duidelijk label. Er wordt nooit tekst verzonnen.
-- De live-adapters (`lib/bwb.ts`, `lib/rechtspraak.ts`) zijn **nog niet getest tegen de echte API's**: de ontwikkelomgeving had geen toegang.
-  Draai de app lokaal en controleer of de badge "Live opgehaald" verschijnt; pas anders de parsing in `lib/bwb.ts` aan.
+- De live-adapters (`lib/bwb.ts`, `lib/rechtspraak.ts`) zijn getest op de Vercel-deployment (18-11-2026): wetteksten komen uit het manifest en de toestand-XML van repository.officiele-overheidspublicaties.nl, uitspraken uit data.rechtspraak.nl. Alle snapshots zijn daartegen gecontroleerd.
 - Snapshots met "Oudere versie" of "Fragment" zijn gemarkeerd; controleer die via de bronlink.
 - De feedback is trefwoord-gebaseerd (kernpunten in `lib/cases.ts`), geen volledige juridische beoordeling.
 
