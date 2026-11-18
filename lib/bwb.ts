@@ -25,7 +25,20 @@ const strip = (s: string) =>
     .replace(/\s+([.,;:])/g, "$1")
     .trim();
 
-async function get(url: string, ms = 8000): Promise<string> {
+const CACHE = new Map<string, { t: number; v: Promise<string> }>();
+const TTL = 60 * 60 * 1000;
+
+function get(url: string, ms = 8000): Promise<string> {
+  const nu = Date.now();
+  const hit = CACHE.get(url);
+  if (hit && nu - hit.t < TTL) return hit.v;
+  const v = haal(url, ms);
+  CACHE.set(url, { t: nu, v });
+  v.catch(() => CACHE.delete(url));
+  return v;
+}
+
+async function haal(url: string, ms: number): Promise<string> {
   const c = new AbortController();
   const t = setTimeout(() => c.abort(), ms);
   try {

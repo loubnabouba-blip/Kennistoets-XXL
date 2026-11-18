@@ -6,8 +6,9 @@ export const maxDuration = 60;
 // TIJDELIJK: vergelijkt alle snapshots met de live tekst. Wordt verwijderd.
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/\[…\]/g, "").trim();
 export async function GET() {
-  const uit = await Promise.all(
-    BRONNEN.map(async (b) => {
+  const uit = [];
+  for (const b of BRONNEN) {
+    uit.push(await (async () => {
       try {
         const l = await haalArtikelLive(b.bwb, b.artikel);
         const t = b.lid ? l.leden[b.lid] : l.heleTekst;
@@ -20,7 +21,7 @@ export async function GET() {
       } catch (e) {
         return { id: b.id, status: "FOUT", fout: String(e).slice(0, 120) };
       }
-    })
-  );
+    })());
+  }
   return NextResponse.json(uit);
 }
