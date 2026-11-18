@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     const r = await fetch(url, { cache: "no-store" });
     const t = await r.text();
     const xmlLinks = Array.from(new Set(t.match(/https?:\/\/[^"'<>\s]+/g) ?? [])).slice(0, 40);
-    return NextResponse.json({ status: r.status, url, lengte: t.length, links: xmlLinks, begin: t.slice(0, 1500) });
+    return NextResponse.json({ status: r.status, url, lengte: t.length, links: xmlLinks, begin: t.slice(0, 1500), einde: t.slice(-2500) });
   } catch (e) {
     return NextResponse.json({ fout: String(e), url });
   }
