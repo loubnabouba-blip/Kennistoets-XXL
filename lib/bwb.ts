@@ -41,21 +41,18 @@ export async function haalArtikelLive(bwb: string, artikel: string): Promise<Liv
   if (!/^BWBR\d{7}$/.test(bwb)) throw new Error("Ongeldig BWB-nummer");
   if (!/^[0-9]+[a-z]{0,3}$/i.test(artikel)) throw new Error("Ongeldig artikelnummer");
 
-  const q = encodeURIComponent(`dcterms.identifier==${bwb}`);
-  const sru = await get(
-    `${SRU}?x-connection=BWB&operation=searchRetrieve&version=2.0&query=${q}&maximumRecords=1`
-  );
-
-  const re = new RegExp(
-    `https://repository\\.officiele-overheidspublicaties\\.nl/bwb/${bwb}/[^"'<>\\s]+?\\.xml`,
-    "g"
-  );
-  const kandidaten = Array.from(new Set(sru.match(re) ?? []));
-  if (!kandidaten.length) throw new Error("Geen toestand-XML gevonden in SRU-antwoord");
-  // Kies de toestand met de laatste datum in het pad (YYYY-MM-DD).
-  kandidaten.sort((a, b) => (a.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? "").localeCompare(b.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? ""));
-  const xmlUrl = kandidaten[kandidaten.length - 1];
-  const xml = await get(xmlUrl, 15000);
+  // Het manifest van de repository somt alle toestanden (versies) van de regeling op.
+  const REPO = "https://repository.officiele-overheidspublicaties.nl/bwb";
+  const manifest = await get(`${REPO}/${bwb}/manifest.xml`, 15000);
+  const vandaag = new Date().toISOString().slice(0, 10);
+  const labels = Array.from(
+    new Set(Array.from(manifest.matchAll(/<expression[^>]*\blabel="(\d{4}-\d{2}-\d{2}_\d+)"/g)).map((m) => m[1]))
+  ).filter((l) => l.slice(0, 10) <= vandaag);
+  if (!labels.length) throw new Error("Geen geldige toestand in manifest gevonden");
+  labels.sort((x, y) => x.localeCompare(y, "en", { numeric: true }));
+  const label = labels[labels.length - 1];
+  const xmlUrl = `${REPO}/${bwb}/${label}/xml/${bwb}_${label}.xml`;
+  const xml = await get(xmlUrl, 20000);
 
   const blokken = xml.match(/<artikel[\s>][\s\S]*?<\/artikel>/g) ?? [];
   const blok = blokken.find((b) => {
@@ -73,7 +70,7 @@ export async function haalArtikelLive(bwb: string, artikel: string): Promise<Liv
   }
   const heleTekst = strip(blok.replace(/<kop>[\s\S]*?<\/kop>/, ""));
   return {
-    peildatum: xmlUrl.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? null,
+    peildatum: label.slice(0, 10),
     leden,
     heleTekst,
     bronXml: xmlUrl,
