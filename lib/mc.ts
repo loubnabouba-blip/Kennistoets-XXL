@@ -147,7 +147,7 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       ["sv-53-2"]
     ),
     bevoegd: q(
-      "Wie bepaalt dat Bakir aan zijn kleding of lichaam wordt onderzocht (art. 56 lid 1 Sv)?",
+      "Wie kan op grond van art. 56 lid 1 Sv bepalen dat Bakir als aangehouden verdachte aan zijn kleding of lichaam wordt onderzocht? (Let op: het gaat om art. 56, niet om de aanhouding zelf.)",
       "De officier van justitie of de hulpofficier van justitie",
       ["De agent zelf", "De burgemeester", "De rechter-commissaris"],
       "Art. 56 lid 1 noemt de officier van justitie of de hulpofficier voor wie de verdachte wordt geleid of die hem zelf heeft aangehouden.",
