@@ -1,5 +1,6 @@
 // TIJDELIJK: audit-route, wordt na de controle verwijderd.
 import { haalArtikelLive } from "@/lib/bwb";
+import { BRONNEN } from "@/lib/sources";
 export const dynamic = "force-dynamic";
 const WET: Record<string, string> = {
   SV: "BWBR0001903", AWBI: "BWBR0006763", OW: "BWBR0001941", GW: "BWBR0005416",
@@ -27,8 +28,28 @@ function skelet(t: string) {
   }
   return out.join(" ");
 }
+const nrm = (x: string) => x.toLowerCase().replace(/\s+/g, " ").trim();
+async function snapCheck() {
+  const uit: string[] = ["id | volledigVlag | woordenSnap | woordenLive | gelijk | beginGelijk"];
+  for (const b of BRONNEN) {
+    try {
+      const a = await haalArtikelLive(b.bwb, b.artikel);
+      const live = b.lid ? a.leden[b.lid] : a.heleTekst;
+      if (!live) { uit.push(`${b.id} | ${b.volledig} | - | - | LID/ARTIKEL NIET GEVONDEN`); continue; }
+      const snap = nrm(b.tekst.replace(/\s*\[…\]\s*/g, " ")).trim();
+      const l = nrm(live);
+      const delen = b.tekst.split(/\[…\]/).map((x) => nrm(x)).filter(Boolean);
+      const alleDelen = delen.every((d) => l.includes(d));
+      uit.push(`${b.id} | ${b.volledig} | ${b.tekst.split(/\s+/).length} | ${live.split(/\s+/).length} | ${snap === l ? "JA" : "NEE"} | ${l.startsWith(delen[0] ?? "") ? "JA" : "NEE"} | delenInLive=${alleDelen ? "JA" : "NEE"}`);
+    } catch (e) {
+      uit.push(`${b.id} | FOUT ${e instanceof Error ? e.message : "?"}`);
+    }
+  }
+  return new Response(uit.join("\n"), { headers: { "content-type": "text/plain; charset=utf-8" } });
+}
 export async function GET(req: Request) {
   const u = new URL(req.url);
+  if (u.searchParams.get("mode") === "snap") return snapCheck();
   const wet = (u.searchParams.get("wet") ?? "").toUpperCase();
   const art = u.searchParams.get("art") ?? "";
   const probes = (u.searchParams.get("p") ?? "").split("|").map((s) => s.trim().toLowerCase()).filter(Boolean);

@@ -102,7 +102,7 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       "Welke voorwaarden gelden volgens art. 97 lid 1 Sv?",
       "Heterdaad of verdenking van een misdrijf uit art. 67 lid 1, dringende noodzakelijkheid, en het optreden van de rechter-commissaris kan niet worden afgewacht",
       [
-        "Dat de rechter-commissaris eerst is geraadpleegd en akkoord ging",
+        "Alleen een vermoeden dat er ergens in de woning een strafbaar feit is gepleegd",
         "Dat de bewoner toestemming geeft",
         "Alleen dat de verdachte in de woning woont",
       ],
@@ -113,21 +113,21 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       "Wie mag doorzoeken als ook het optreden van de officier van justitie niet kan worden afgewacht?",
       "De hulpofficier van justitie",
       ["Iedere agent", "De burgemeester", "Niemand: er moet gewacht worden op de rechter-commissaris"],
-      "Art. 97 lid 3 Sv: kan ook het optreden van de officier van justitie niet worden afgewacht, dan komt de bevoegdheid toe aan de hulpofficier.",
-      ["sv-97-3"]
+      "Art. 97 lid 3 Sv: kan ook het optreden van de officier van justitie niet worden afgewacht, dan komt de bevoegdheid toe aan de hulpofficier. Ook de hulpofficier heeft wel een machtiging van de rechter-commissaris nodig (lid 2 en 3).",
+      ["sv-97-2", "sv-97-3"]
     ),
     vorm: q(
-      "Wat is voor het binnentreden in een woning zonder toestemming van de bewoner in beginsel vereist (art. 2 lid 1 Awbi)?",
-      "Een schriftelijke machtiging, die zo mogelijk wordt getoond",
-      ["Alleen een mondelinge toestemming van een collega", "Bij heterdaad nooit een machtiging", "Een bevel van de burgemeester"],
-      "Art. 2 lid 1 Awbi vereist een schriftelijke machtiging, die zo mogelijk wordt getoond. De uitzondering van lid 3 betreft ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen.",
-      ["awbi-2-1", "awbi-2-3"]
+      "Wat is vereist voordat de hulpofficier een woning zonder toestemming van de bewoner ter inbeslagneming mag doorzoeken (art. 97 Sv)?",
+      "Een machtiging van de rechter-commissaris (met redenen omkleed)",
+      ["Alleen een mondelinge toestemming van een collega", "Bij heterdaad geen enkele machtiging", "Een bevel van de burgemeester"],
+      "Art. 97 lid 2 Sv vereist een met redenen omklede machtiging van de rechter-commissaris; lid 3 verklaart dit van overeenkomstige toepassing op de hulpofficier. Met die machtiging is volgens lid 4 geen Awbi-machtiging meer nodig voor het binnentreden.",
+      ["sv-97-2", "sv-97-3", "sv-97-4"]
     ),
     proportionaliteit: q(
       "Waarom is hier aan de dringende noodzakelijkheid en subsidiariteit voldaan?",
-      "Er is concreet gevaar dat de voorraad wordt weggemaakt, de OvJ en RC zijn niet tijdig bereikbaar en toestemming is geweigerd",
+      "Er is concreet gevaar dat de voorraad wordt weggemaakt, de OvJ is niet bereikbaar, de RC kan niet zelf tijdig optreden en toestemming is geweigerd",
       ["Omdat het nacht is", "Omdat de verdachte een bekende van de politie is", "Omdat het om een grote partij gaat"],
-      "De kern is dat er geen lichter middel is: gevaar voor wegmaking, geen tijdig optreden van OvJ of RC mogelijk en geweigerde toestemming.",
+      "De kern is dat er geen lichter middel is: gevaar voor wegmaking, OvJ niet bereikbaar, de RC kan niet zelf tijdig optreden en toestemming is geweigerd. De machtiging van de RC blijft wel vereist.",
       ["sv-97-1"]
     ),
   },

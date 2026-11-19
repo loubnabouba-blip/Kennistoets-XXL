@@ -70,13 +70,37 @@ export const BRONNEN: BronArtikel[] = [
     url: wettenUrl(SV, "97"),
   },
   {
+    id: "sv-97-2",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "97",
+    lid: "2",
+    tekst:
+      "Voor een doorzoeking als bedoeld in het eerste lid behoeft de officier van justitie de machtiging van de rechter-commissaris. Deze machtiging is met redenen omkleed.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "97"),
+  },
+  {
     id: "sv-97-3",
     wet: "Wetboek van Strafvordering",
     bwb: SV,
     artikel: "97",
     lid: "3",
     tekst:
-      "Kan ook het optreden van de officier van justitie niet worden afgewacht, dan komt de bevoegdheid tot doorzoeking toe aan de hulpofficier. Het eerste en het tweede lid zijn van overeenkomstige toepassing.",
+      "Kan ook het optreden van de officier van justitie niet worden afgewacht, dan komt de bevoegdheid tot doorzoeking toe aan de hulpofficier. Het eerste en het tweede lid zijn van overeenkomstige toepassing. De machtiging van de rechter-commissaris wordt zo mogelijk door tussenkomst van de officier van justitie gevraagd.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "97"),
+  },
+  {
+    id: "sv-97-4",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "97",
+    lid: "4",
+    tekst:
+      "Indien de rechter-commissaris aan een hulpofficier van justitie machtiging heeft verleend ter inbeslagneming een woning zonder toestemming van de bewoner te doorzoeken, is voor het binnentreden in die woning door de betrokken hulpofficier van justitie geen machtiging als bedoeld in artikel 2 van de Algemene wet op het binnentreden vereist.",
     volledig: true,
     peildatum: "2026-07-01",
     url: wettenUrl(SV, "97"),

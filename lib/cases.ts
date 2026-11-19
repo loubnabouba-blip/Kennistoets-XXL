@@ -277,19 +277,19 @@ export const CASUS_POOL: Casus[] = [
       "Mag u als hulpofficier van justitie de woning van Kaya doorzoeken? Werk de vijf aspecten uit.",
     situatie: [
       "U bent hulpofficier van justitie (HOvJ). Om 04.10 uur meldt het drugsteam dat Kaya is aangehouden op heterdaad bij de overdracht van 2 kilo cocaïne in een auto. Kaya zegt dat de rest van de partij in zijn woning ligt. Er is concreet gevaar dat familieleden de voorraad wegmaken zodra zij horen van de aanhouding.",
-      "De dienstdoende officier van justitie is na meerdere pogingen telefonisch niet bereikbaar. De rechter-commissaris kan zo snel niet worden gehaald. Kaya weigert toestemming voor betreding van zijn woning.",
+      "De dienstdoende officier van justitie is na meerdere pogingen telefonisch niet bereikbaar. De piket-rechter-commissaris is telefonisch wel bereikbaar, maar kan niet zelf op tijd ter plaatse zijn om de doorzoeking te verrichten. Kaya weigert toestemming voor betreding van zijn woning.",
     ],
     bijlage: {
       titel: "Meldkamerlogboek (fictief)",
       inhoud:
-        "04.12 OvJ-piket gebeld: geen gehoor. 04.17 tweede poging: geen gehoor. 04.21 derde poging via meldkamer: geen gehoor. 04.22 verdachte weigert toestemming voor betreden woning. Bewoners zijn volgens het drugsteam thuis en alert.",
+        "04.12 OvJ-piket gebeld: geen gehoor. 04.17 tweede poging: geen gehoor. 04.21 derde poging via meldkamer: geen gehoor. 04.23 RC-piket telefonisch bereikt: kan niet zelf tijdig ter plaatse komen. 04.22 verdachte weigert toestemming voor betreden woning. Bewoners zijn volgens het drugsteam thuis en alert.",
     },
     uitspraken: ["ECLI:NL:HR:2015:4"],
     aspecten: [
       {
         key: "grondslag",
         modelantwoord:
-          "De bevoegdheid tot doorzoeking van een woning zonder toestemming ter inbeslagneming berust op art. 97 Sv; voor het binnentreden is een machtiging vereist op grond van art. 2 Awbi. Het feit zelf valt onder de Opiumwet (art. 2).",
+          "De bevoegdheid tot doorzoeking van een woning zonder toestemming ter inbeslagneming berust op art. 97 Sv (lid 1; voor de hulpofficier lid 3) en vereist een machtiging van de rechter-commissaris (lid 2). Een aparte machtiging op grond van art. 2 Awbi is dan niet nodig (art. 97 lid 4 Sv). Het feit zelf valt onder de Opiumwet (art. 2).",
         kernpunten: [
           {
             id: "c3-g1",
@@ -297,15 +297,15 @@ export const CASUS_POOL: Casus[] = [
             patronen: ["\\b97\\b"],
             toelichting:
               "Art. 97 Sv regelt de doorzoeking van een woning zonder toestemming van de bewoner ter inbeslagneming.",
-            bronIds: ["sv-97-1", "sv-97-3"],
+            bronIds: ["sv-97-1", "sv-97-2", "sv-97-3"],
           },
           {
             id: "c3-g2",
             label: "Awbi (machtiging binnentreden)",
             patronen: ["awbi", "algemene wet op het binnentreden", "binnentreden"],
             toelichting:
-              "Voor het binnentreden in een woning zonder toestemming van de bewoner is op grond van art. 2 Awbi een schriftelijke machtiging vereist.",
-            bronIds: ["awbi-2-1"],
+              "Voor het binnentreden in een woning zonder toestemming van de bewoner is op grond van art. 2 lid 1 Awbi in beginsel een schriftelijke machtiging vereist; art. 97 lid 4 Sv neemt dat vereiste weg voor de hulpofficier aan wie de rechter-commissaris machtiging heeft verleend.",
+            bronIds: ["awbi-2-1", "sv-97-4"],
           },
           {
             id: "c3-g3",
@@ -335,7 +335,7 @@ export const CASUS_POOL: Casus[] = [
             label: "Dringende noodzakelijkheid; RC niet af te wachten",
             patronen: ["dringende noodzak", "rechter-commissaris.*(niet|afgewacht)", "\\brc\\b.*(niet|afgewacht)"],
             toelichting:
-              "Art. 97 lid 1 Sv vereist dringende noodzakelijkheid en dat het optreden van de rechter-commissaris niet kan worden afgewacht.",
+              "Art. 97 lid 1 Sv vereist dringende noodzakelijkheid en dat het optreden van de rechter-commissaris (die zelf de doorzoeking zou verrichten) niet kan worden afgewacht.",
             bronIds: ["sv-97-1"],
           },
         ],
@@ -343,7 +343,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "bevoegd",
         modelantwoord:
-          "De bevoegdheid ligt in eerste instantie bij de officier van justitie. Kan ook zijn optreden niet worden afgewacht, dan komt de bevoegdheid tot doorzoeking toe aan de hulpofficier (art. 97 lid 3 Sv). De HOvJ mag dus optreden, maar alleen omdat de OvJ aantoonbaar niet bereikbaar is.",
+          "De bevoegdheid ligt in eerste instantie bij de officier van justitie (lid 1). Kan ook zijn optreden niet worden afgewacht, dan komt de bevoegdheid tot doorzoeking toe aan de hulpofficier (art. 97 lid 3 Sv). Ook de hulpofficier heeft een machtiging van de rechter-commissaris nodig (lid 2, via lid 3 van overeenkomstige toepassing); die wordt zo mogelijk door tussenkomst van de OvJ gevraagd, hier dus rechtstreeks bij de piket-RC omdat de OvJ niet bereikbaar is.",
         kernpunten: [
           {
             id: "c3-b1",
@@ -361,20 +361,28 @@ export const CASUS_POOL: Casus[] = [
               "De bevoegdheid van de HOvJ is subsidiair aan die van de OvJ; leg vast hoe vaak u hebt geprobeerd te bellen.",
             bronIds: ["sv-97-3"],
           },
+          {
+            id: "c3-b3",
+            label: "Machtiging van de rechter-commissaris vereist",
+            patronen: ["machtiging.*(rechter|\\brc\\b)", "(rechter-commissaris|\\brc\\b).*machtiging"],
+            toelichting:
+              "Art. 97 lid 2 Sv: voor de doorzoeking is een machtiging van de rechter-commissaris nodig. Lid 3 verklaart lid 1 en 2 van overeenkomstige toepassing op de hulpofficier en bepaalt dat de machtiging zo mogelijk via de OvJ wordt gevraagd.",
+            bronIds: ["sv-97-2", "sv-97-3"],
+          },
         ],
       },
       {
         key: "vorm",
         modelantwoord:
-          "Zonder toestemming van de bewoner is voor het binnentreden een schriftelijke machtiging vereist (art. 2 lid 1 Awbi), die zo mogelijk wordt getoond. De uitzondering in lid 3 betreft ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen; gevaar voor wegmaking van bewijs valt daar niet zonder meer onder. Art. 3 lid 1 Awbi noemt de hulpofficier van justitie onder de ambtenaren die een machtiging mogen geven; lees in de bron onder welke voorwaarden.",
+          "Voor de doorzoeking is een met redenen omklede machtiging van de rechter-commissaris nodig (art. 97 lid 2 Sv). Heeft de rechter-commissaris de hulpofficier die machtiging verleend, dan is voor het binnentreden in de woning geen machtiging als bedoeld in art. 2 Awbi vereist (art. 97 lid 4 Sv). De algemene Awbi-regel (schriftelijke machtiging, zo mogelijk getoond; art. 2 lid 1) wordt hier dus door art. 97 lid 4 Sv gedekt. De Awbi-uitzondering van lid 3 (ernstig en onmiddellijk gevaar voor de veiligheid van personen of goederen) is voor gevaar van wegmaking van bewijs niet zonder meer aan de orde.",
         kernpunten: [
           {
             id: "c3-f1",
-            label: "Schriftelijke machtiging (Awbi)",
-            patronen: ["schriftelijke machtiging", "machtiging"],
+            label: "Machtiging RC (art. 97 lid 2); daarna geen Awbi-machtiging nodig (lid 4)",
+            patronen: ["rechter-commissaris", "\\brc\\b", "lid 4", "geen (awbi-)?machtiging"],
             toelichting:
-              "Art. 2 lid 1 Awbi: voor het binnentreden zonder toestemming is een schriftelijke machtiging vereist; zo mogelijk wordt zij getoond.",
-            bronIds: ["awbi-2-1", "awbi-hovj"],
+              "Art. 97 lid 2 Sv vereist een machtiging van de rechter-commissaris. Art. 97 lid 4 Sv: heeft de RC de hulpofficier machtiging verleend, dan is voor het binnentreden geen machtiging als bedoeld in art. 2 Awbi vereist (de algemene regel van art. 2 lid 1 Awbi).",
+            bronIds: ["sv-97-2", "sv-97-4", "awbi-2-1"],
           },
           {
             id: "c3-f2",
@@ -397,14 +405,14 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "proportionaliteit",
         modelantwoord:
-          "De dringende noodzakelijkheid vormt de kern van de afweging: er is concreet gevaar voor wegmaking, geen mogelijkheid om de OvJ of RC tijdig te bereiken en er is geen lichter middel (toestemming is geweigerd). De doorzoeking blijft beperkt tot de plaatsen waar de voorraad vermoed wordt. Zonder de wettelijke voorwaarden dreigt een vormverzuim met mogelijk bewijsuitsluiting (art. 359a Sv).",
+          "De dringende noodzakelijkheid vormt de kern van de afweging: er is concreet gevaar voor wegmaking, de OvJ is niet bereikbaar, de RC kan niet zelf tijdig optreden en er is geen lichter middel (toestemming is geweigerd). De machtiging van de RC blijft wel nodig en wordt telefonisch gevraagd. De doorzoeking blijft beperkt tot de plaatsen waar de voorraad vermoed wordt. Zonder de wettelijke voorwaarden dreigt een vormverzuim met mogelijk bewijsuitsluiting (art. 359a Sv).",
         kernpunten: [
           {
             id: "c3-p1",
             label: "Wegmaking / geen lichter middel",
             patronen: ["wegmaking", "wegmaken", "gevaar", "subsidiar", "lichter"],
             toelichting:
-              "Subsidiariteit: er is geen lichter middel (toestemming geweigerd, OvJ en RC niet tijdig bereikbaar) bij concreet gevaar voor wegmaking.",
+              "Subsidiariteit: er is geen lichter middel (toestemming geweigerd, OvJ niet bereikbaar, RC kan niet zelf tijdig optreden) bij concreet gevaar voor wegmaking.",
             bronIds: ["sv-97-1"],
           },
           {
