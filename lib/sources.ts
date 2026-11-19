@@ -137,8 +137,8 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "3",
     lid: "1",
     tekst:
-      "Bevoegd tot het geven van een machtiging tot binnentreden zijn: a. de advocaat-generaal bij het ressortsparket […] c. de hulpofficier van justitie […]",
-    volledig: false,
+      "Bevoegd tot het geven van een machtiging tot binnentreden zijn: a. de advocaat-generaal bij het ressortsparket; b. de officier van justitie; c. de hulpofficier van justitie.",
+    volledig: true,
     peildatum: "2010-07-01",
     url: wettenUrl(AWBI, "3"),
   },
@@ -294,7 +294,7 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "163",
     lid: "4",
     tekst:
-      "[…] indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, […] kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, en artikel 8, derde lid, onderdeel b. […]",
+      "In het geval, bedoeld in het derde lid, of indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, […] kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, of artikel 8, derde lid, onderdeel b.",
     volledig: false,
     peildatum: "2026-09-01",
     url: wettenUrl(WVW, "163"),
@@ -330,8 +330,8 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "8",
     lid: "1",
     tekst:
-      "Een ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak, is bevoegd tot het vorderen van inzage van een identiteitsbewijs als bedoeld in artikel 1 van de Wet op de identificatieplicht van personen, voor zover dat […]",
-    volledig: false,
+      "Een ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak, is bevoegd tot het vorderen van inzage van een identiteitsbewijs als bedoeld in artikel 1 van de Wet op de identificatieplicht van personen, voor zover dat redelijkerwijs noodzakelijk is voor de uitvoering van de politietaak.",
+    volledig: true,
     peildatum: "2026-06-12",
     url: wettenUrl(PW, "8"),
   },

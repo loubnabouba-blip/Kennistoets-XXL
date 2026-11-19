@@ -551,7 +551,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "proportionaliteit",
         modelantwoord:
-          "Het onderzoek aan kleding of lichaam vereist ernstige bezwaren (lid 4) en, bij een bepaling van de OvJ of HOvJ, het belang van het onderzoek (lid 1); het mag niet verder gaan dan daarvoor nodig is.",
+          "Het onderzoek aan kleding of lichaam vereist ernstige bezwaren tegen de verdachte (lid 1 en lid 4) en, bij een bepaling van de OvJ of HOvJ, het belang van het onderzoek (lid 1); het mag niet verder gaan dan daarvoor nodig is.",
         kernpunten: [
           {
             id: "c4-p1",
@@ -641,7 +641,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "vorm",
         modelantwoord:
-          "Eerst moet om toestemming voor het bloedonderzoek worden gevraagd (lid 4), en wel nadat de medewerking niet tot een voltooid ademonderzoek heeft geleid. Pas bij weigering kan het bevel van lid 5 worden gegeven.",
+          "Eerst moet om toestemming voor het bloedonderzoek worden gevraagd (lid 4). Dat kan onder meer als de medewerking van de verdachte niet tot een voltooid ademonderzoek heeft geleid, zoals hier. Pas bij weigering kan het bevel van lid 5 worden gegeven.",
         kernpunten: [
           {
             id: "c5-f1",
@@ -654,7 +654,7 @@ export const CASUS_POOL: Casus[] = [
             id: "c5-f2",
             label: "Ademonderzoek niet voltooid",
             patronen: ["niet voltooid", "niet (is )?(gelukt|voltooid)", "geen voltooid", "onvoldoende"],
-            toelichting: "Lid 4: bij een niet voltooid ademonderzoek kan toestemming voor een bloedonderzoek worden gevraagd.",
+            toelichting: "Lid 4: onder meer bij een niet voltooid ademonderzoek kan toestemming voor een bloedonderzoek worden gevraagd.",
             bronIds: ["wvw-163-4"],
           },
         ],
