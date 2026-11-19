@@ -47,9 +47,33 @@ async function snapCheck() {
   }
   return new Response(uit.join("\n"), { headers: { "content-type": "text/plain; charset=utf-8" } });
 }
+async function delen(id: string) {
+  const b = BRONNEN.find((x) => x.id === id);
+  if (!b) return new Response("onbekend id", { status: 400 });
+  const a = await haalArtikelLive(b.bwb, b.artikel);
+  const live = nrm(b.lid ? a.leden[b.lid] : a.heleTekst).split(" ");
+  const uit: string[] = [`${id}: live ${live.length} woorden`];
+  b.tekst.split(/\[…\]/).map((x) => nrm(x)).filter(Boolean).forEach((d, i) => {
+    const w = d.split(" ");
+    // zoek beste uitlijning: begin van deel i in live
+    let best = { start: -1, n: 0 };
+    for (let st = 0; st < live.length; st++) {
+      let n = 0;
+      while (n < w.length && st + n < live.length && live[st + n] === w[n]) n++;
+      if (n > best.n) best = { start: st, n };
+    }
+    uit.push(`deel ${i + 1} (${w.length} w): ${best.n === w.length ? "VOLLEDIG IN LIVE" : `komt overeen t/m woord ${best.n}`}`);
+    if (best.n < w.length) {
+      uit.push(`  snapshot daarna: ${w.slice(best.n, best.n + 10).join(" ")}`);
+      uit.push(`  live daarna: ${live.slice(best.start + best.n, best.start + best.n + 10).join(" ")}`);
+    }
+  });
+  return new Response(uit.join("\n"), { headers: { "content-type": "text/plain; charset=utf-8" } });
+}
 export async function GET(req: Request) {
   const u = new URL(req.url);
   if (u.searchParams.get("mode") === "snap") return snapCheck();
+  if (u.searchParams.get("mode") === "delen") return delen(u.searchParams.get("id") ?? "");
   const wet = (u.searchParams.get("wet") ?? "").toUpperCase();
   const art = u.searchParams.get("art") ?? "";
   const probes = (u.searchParams.get("p") ?? "").split("|").map((s) => s.trim().toLowerCase()).filter(Boolean);
