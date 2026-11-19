@@ -147,11 +147,11 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       ["sv-53-2"]
     ),
     bevoegd: q(
-      "Wie kan op grond van art. 56 lid 1 Sv bepalen dat Bakir als aangehouden verdachte aan zijn kleding of lichaam wordt onderzocht? (Let op: het gaat om art. 56, niet om de aanhouding zelf.)",
-      "De officier van justitie of de hulpofficier van justitie",
-      ["De agent zelf", "De burgemeester", "De rechter-commissaris"],
-      "Art. 56 lid 1 noemt de officier van justitie of de hulpofficier voor wie de verdachte wordt geleid of die hem zelf heeft aangehouden.",
-      ["sv-56-1"]
+      "Wie mag de kleding van een aangehouden verdachte tegen wie ernstige bezwaren bestaan onderzoeken (art. 56 lid 4 Sv)?",
+      "De overige opsporingsambtenaren, dus ook de agent zelf",
+      ["Alleen de officier van justitie", "Alleen de rechter-commissaris", "Alleen na een bevel van de burgemeester"],
+      "Art. 56 lid 4 Sv: de overige opsporingsambtenaren zijn bevoegd de aangehouden verdachte tegen wie ernstige bezwaren bestaan aan zijn kleding te onderzoeken. Lid 1 geeft daarnaast de OvJ en de HOvJ de bevoegdheid te bepalen dat de verdachte aan zijn lichaam of kleding wordt onderzocht.",
+      ["sv-56-4", "sv-56-1"]
     ),
     vorm: q(
       "Wat moet de aanhouder daarna doen (art. 53 lid 2 Sv)?",
@@ -165,11 +165,11 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       ["sv-53-2"]
     ),
     proportionaliteit: q(
-      "Welke voorwaarden gelden voor een onderzoek aan kleding of lichaam (art. 56 lid 1 Sv)?",
-      "Ernstige bezwaren tegen de verdachte en het belang van het onderzoek",
+      "Welke voorwaarde geldt voor het onderzoek aan de kleding van een aangehouden verdachte (art. 56 Sv)?",
+      "Er moeten ernstige bezwaren tegen de verdachte bestaan",
       ["Elke verdachte kan altijd worden onderzocht", "Alleen met toestemming van de verdachte", "Alleen als de verdachte gewelddadig is"],
-      "Art. 56 lid 1: bij het bestaan van ernstige bezwaren, in het belang van het onderzoek.",
-      ["sv-56-1"]
+      "Art. 56 lid 4 vereist ernstige bezwaren tegen de aangehouden verdachte. Lid 1 noemt dat ook en voegt voor een bepaling van de OvJ of HOvJ het belang van het onderzoek toe.",
+      ["sv-56-4", "sv-56-1"]
     ),
   },
   "c5-wvw-alcohol": {

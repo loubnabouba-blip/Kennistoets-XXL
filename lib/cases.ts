@@ -428,7 +428,7 @@ export const CASUS_POOL: Casus[] = [
       "Welke bevoegdheden hebben de agenten bij Bakir en wat moet er daarna gebeuren? Werk de vijf aspecten uit.",
     situatie: [
       "Om 01.15 uur zien agenten Smit en De Vries op het stationsplein hoe Bakir een pistool uit zijn jaszak haalt en aan een vriend laat zien. De agenten lopen op hem af en nemen het pistool af. Het is een vuurwapen van categorie III. Bakir heeft geen verlof en kan ook geen ontheffing tonen.",
-      "De agenten willen Bakir aanhouden en zijn kleding laten onderzoeken op meer wapens of munitie.",
+      "De agenten willen Bakir aanhouden en zijn kleding onderzoeken op meer wapens of munitie.",
     ],
     bijlage: {
       titel: "Aantekening agent Smit (fictief)",
@@ -440,7 +440,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "grondslag",
         modelantwoord:
-          "Het voorhanden hebben van een wapen van categorie III is verboden op grond van art. 26 lid 1 WWM (voor categorie I geldt art. 13 lid 1). De aanhouding op heterdaad berust op art. 53 Sv; het onderzoek aan kleding en lichaam op art. 56 Sv.",
+          "Het voorhanden hebben van een wapen van categorie III is verboden op grond van art. 26 lid 1 WWM (voor categorie I geldt art. 13 lid 1). De aanhouding op heterdaad berust op art. 53 Sv; het onderzoek aan de kleding van de aangehouden verdachte op art. 56 Sv (lid 4 voor de overige opsporingsambtenaren, lid 1 voor de OvJ en HOvJ).",
         kernpunten: [
           {
             id: "c4-g1",
@@ -461,15 +461,15 @@ export const CASUS_POOL: Casus[] = [
             id: "c4-g3",
             label: "Art. 56 Sv (onderzoek aan kleding of lichaam)",
             patronen: ["\\b56\\b"],
-            toelichting: "Een onderzoek aan kleding of lichaam van de verdachte is geregeld in art. 56 Sv.",
-            bronIds: ["sv-56-1"],
+            toelichting: "Een onderzoek aan kleding of lichaam van de aangehouden verdachte is geregeld in art. 56 Sv.",
+            bronIds: ["sv-56-4", "sv-56-1"],
           },
         ],
       },
       {
         key: "verdenking",
         modelantwoord:
-          "Er is ontdekking op heterdaad van een strafbaar feit: het voorhanden hebben van een pistool zonder verlof, waargenomen door de agenten zelf. Dat geeft ook een redelijk vermoeden van schuld (art. 27 Sv). Voor het onderzoek aan kleding zijn bovendien ernstige bezwaren vereist (art. 56 lid 1).",
+          "Er is ontdekking op heterdaad van een strafbaar feit: het voorhanden hebben van een pistool zonder verlof, waargenomen door de agenten zelf. Dat geeft ook een redelijk vermoeden van schuld (art. 27 Sv). Voor het onderzoek aan kleding zijn bovendien ernstige bezwaren vereist (art. 56 lid 1 en lid 4).",
         kernpunten: [
           {
             id: "c4-v1",
@@ -482,15 +482,15 @@ export const CASUS_POOL: Casus[] = [
             id: "c4-v2",
             label: "Ernstige bezwaren voor onderzoek aan kleding",
             patronen: ["ernstige bezwaren"],
-            toelichting: "Art. 56 lid 1 Sv vereist het bestaan van ernstige bezwaren tegen de verdachte.",
-            bronIds: ["sv-56-1"],
+            toelichting: "Art. 56 lid 4 Sv vereist ernstige bezwaren tegen de aangehouden verdachte; lid 1 noemt dat ook.",
+            bronIds: ["sv-56-4", "sv-56-1"],
           },
         ],
       },
       {
         key: "bevoegd",
         modelantwoord:
-          "De agent (opsporingsambtenaar) mag Bakir zelf aanhouden en brengt hem ten spoedigste over voor voorgeleiding aan de hulpofficier van justitie of de officier van justitie. De beslissing dat Bakir aan zijn kleding of lichaam wordt onderzocht, neemt de officier van justitie of de hulpofficier.",
+          "De agent (opsporingsambtenaar) mag Bakir zelf aanhouden en brengt hem ten spoedigste over voor voorgeleiding aan de hulpofficier van justitie of de officier van justitie. De kleding van de aangehouden verdachte mag de agent (een van de overige opsporingsambtenaren) zelf onderzoeken zolang er ernstige bezwaren zijn (art. 56 lid 4). Daarnaast kan de officier van justitie of de hulpofficier bepalen dat de verdachte aan zijn lichaam of kleding wordt onderzocht (art. 56 lid 1).",
         kernpunten: [
           {
             id: "c4-b1",
@@ -501,9 +501,18 @@ export const CASUS_POOL: Casus[] = [
           },
           {
             id: "c4-b2",
-            label: "OvJ of HOvJ bepaalt onderzoek aan kleding/lichaam",
+            label: "Agent mag de kleding van de aangehouden verdachte zelf onderzoeken (lid 4)",
+            patronen: ["kleding", "kleeding", "fouille", "overige opsporingsambtenaren", "lid 4"],
+            toelichting:
+              "Art. 56 lid 4 Sv: de overige opsporingsambtenaren zijn bevoegd de aangehouden verdachte tegen wie ernstige bezwaren bestaan aan zijn kleding te onderzoeken.",
+            bronIds: ["sv-56-4"],
+          },
+          {
+            id: "c4-b3",
+            label: "OvJ of HOvJ kan onderzoek aan lichaam of kleding bepalen (lid 1)",
             patronen: ["hulpofficier", "hovj", "officier van justitie", "\\bovj\\b"],
-            toelichting: "Art. 56 lid 1 Sv noemt de officier van justitie of de hulpofficier.",
+            toelichting:
+              "Art. 56 lid 1 Sv noemt de officier van justitie of de hulpofficier, die in het belang van het onderzoek kunnen bepalen dat de verdachte aan zijn lichaam of kleding wordt onderzocht.",
             bronIds: ["sv-56-1"],
           },
         ],
@@ -511,7 +520,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "vorm",
         modelantwoord:
-          "De aanhouder brengt de verdachte ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier of de officier van justitie (art. 53 lid 2 Sv). Het onderzoek aan kleding of lichaam volgt op een bepaling van de OvJ of HOvJ (art. 56 lid 1).",
+          "De aanhouder brengt de verdachte ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier of de officier van justitie (art. 53 lid 2 Sv). De kleding mag de agent zelf onderzoeken (art. 56 lid 4); voor een onderzoek aan het lichaam is een bepaling van de OvJ of HOvJ aan de orde (art. 56 lid 1).",
         kernpunten: [
           {
             id: "c4-f1",
@@ -523,24 +532,25 @@ export const CASUS_POOL: Casus[] = [
           },
           {
             id: "c4-f2",
-            label: "Bepaling OvJ/HOvJ vóór onderzoek aan kleding",
-            patronen: ["bepal", "bevel", "opdracht"],
-            toelichting: "Het onderzoek aan kleding of lichaam gebeurt na een bepaling van de OvJ of HOvJ.",
-            bronIds: ["sv-56-1"],
+            label: "Agent beperkt zich tot kleding; lichaam via OvJ/HOvJ (lid 1)",
+            patronen: ["lichaam", "bepal", "bevel", "opdracht", "hulpofficier", "hovj"],
+            toelichting:
+              "Art. 56 lid 4 geeft de agent de bevoegdheid voor de kleding. Voor onderzoek aan het lichaam noemt lid 1 de OvJ of HOvJ.",
+            bronIds: ["sv-56-4", "sv-56-1"],
           },
         ],
       },
       {
         key: "proportionaliteit",
         modelantwoord:
-          "Het onderzoek aan kleding of lichaam moet in het belang van het onderzoek zijn en vereist ernstige bezwaren; het mag niet verder gaan dan daarvoor nodig is.",
+          "Het onderzoek aan kleding of lichaam vereist ernstige bezwaren (lid 4) en, bij een bepaling van de OvJ of HOvJ, het belang van het onderzoek (lid 1); het mag niet verder gaan dan daarvoor nodig is.",
         kernpunten: [
           {
             id: "c4-p1",
             label: "In het belang van het onderzoek / niet verder dan nodig",
             patronen: ["belang van het onderzoek", "proportion", "subsidiar", "noodzak", "evenredig", "niet verder"],
-            toelichting: "Art. 56 lid 1 koppelt het onderzoek aan het belang van het onderzoek.",
-            bronIds: ["sv-56-1"],
+            toelichting: "Art. 56 lid 1 koppelt het onderzoek aan het belang van het onderzoek; lid 4 aan ernstige bezwaren.",
+            bronIds: ["sv-56-1", "sv-56-4"],
           },
         ],
       },

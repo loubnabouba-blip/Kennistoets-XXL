@@ -214,6 +214,18 @@ export const BRONNEN: BronArtikel[] = [
     peildatum: "2026-07-01",
     url: wettenUrl(SV, "56"),
   },
+  {
+    id: "sv-56-4",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "56",
+    lid: "4",
+    tekst:
+      "De overige opsporingsambtenaren zijn bevoegd den aangehoudene tegen wien ernstige bezwaren bestaan, aan zijne kleeding te onderzoeken.",
+    volledig: true,
+    peildatum: "2013-01-01",
+    url: wettenUrl(SV, "56"),
+  },
   // ---------- Wet wapens en munitie ----------
   {
     id: "ww-13-1",
