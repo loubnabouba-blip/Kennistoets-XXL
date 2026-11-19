@@ -52,7 +52,7 @@ async function delen(id: string) {
   if (!b) return new Response("onbekend id", { status: 400 });
   const a = await haalArtikelLive(b.bwb, b.artikel);
   const live = nrm(b.lid ? a.leden[b.lid] : a.heleTekst).split(" ");
-  const uit: string[] = [`${id}: live ${live.length} woorden`];
+  const uit: string[] = [`${id}: live ${live.length} woorden`, `live begin: ${live.slice(0, 12).join(" ")}`, `live eind: ${live.slice(-14).join(" ")}`];
   b.tekst.split(/\[…\]/).map((x) => nrm(x)).filter(Boolean).forEach((d, i) => {
     const w = d.split(" ");
     // zoek beste uitlijning: begin van deel i in live

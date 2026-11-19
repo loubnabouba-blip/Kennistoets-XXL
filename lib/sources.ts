@@ -64,8 +64,8 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "97",
     lid: "1",
     tekst:
-      "In geval van ontdekking op heterdaad van een strafbaar feit of in geval van verdenking van een misdrijf als omschreven in artikel 67, eerste lid, kan de officier van justitie, bij dringende noodzakelijkheid en indien het optreden van de rechter-commissaris niet kan worden afgewacht, ter inbeslagneming de volgende plaatsen doorzoeken: a. een woning zonder toestemming van de bewoner, en […]",
-    volledig: false,
+      "In geval van ontdekking op heterdaad van een strafbaar feit of in geval van verdenking van een misdrijf als omschreven in artikel 67, eerste lid, kan de officier van justitie, bij dringende noodzakelijkheid en indien het optreden van de rechter-commissaris niet kan worden afgewacht, ter inbeslagneming een woning zonder toestemming van de bewoner doorzoeken.",
+    volledig: true,
     peildatum: "2026-07-01",
     url: wettenUrl(SV, "97"),
   },
@@ -220,8 +220,8 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "176",
     lid: "1",
     tekst:
-      "Wanneer een omstandigheid als bedoeld in artikel 175, eerste lid, zich voordoet, kan de burgemeester algemeen verbindende voorschriften geven die ter handhaving van de openbare orde of ter beperking van gevaar nodig zijn.",
-    volledig: true,
+      "Wanneer een omstandigheid als bedoeld in artikel 175, eerste lid, zich voordoet, kan de burgemeester algemeen verbindende voorschriften geven die ter handhaving van de openbare orde of ter beperking van gevaar nodig zijn. […]",
+    volledig: false,
     peildatum: "2026-10-01",
     url: wettenUrl(GW, "176"),
   },
@@ -294,7 +294,7 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "163",
     lid: "4",
     tekst:
-      "[…] indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, en artikel 8, derde lid, onderdeel b. […]",
+      "[…] indien de medewerking van de verdachte niet heeft geleid tot een voltooid ademonderzoek, […] kan de opsporingsambtenaar de verdachte vragen of hij zijn toestemming geeft tot het verrichten van een onderzoek als bedoeld in artikel 8, tweede lid, onderdeel b, en artikel 8, derde lid, onderdeel b. […]",
     volledig: false,
     peildatum: "2026-09-01",
     url: wettenUrl(WVW, "163"),
