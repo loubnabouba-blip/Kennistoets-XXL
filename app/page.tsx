@@ -12,6 +12,7 @@ const START: ToetsConfig = {
   wetten: ["sv", "awbi", "gemw", "opiumwet"],
   aantal: 3,
   focus: "alle",
+  vraagvorm: "mix",
 };
 
 const aspectenVoor = (f: ToetsConfig["focus"]): AspectKey[] =>
@@ -98,6 +99,7 @@ export default function Home() {
           key={run}
           casussen={casussen}
           aspecten={aspecten}
+          vorm={cfg.vraagvorm ?? "mix"}
           onKlaar={(r) => {
             registreerResultaten(r);
             setRes(r);

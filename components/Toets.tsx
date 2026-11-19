@@ -1,28 +1,49 @@
 "use client";
-import { useState } from "react";
-import { ASPECT_INSTRUCTIES, ASPECT_LABELS, type AspectKey, type Casus, type CasusResultaat } from "@/lib/types";
+import { useMemo, useState } from "react";
+import {
+  ALLE_ASPECTEN,
+  ASPECT_INSTRUCTIES,
+  ASPECT_LABELS,
+  type AspectKey,
+  type Casus,
+  type CasusResultaat,
+  type Vraagvorm,
+} from "@/lib/types";
 import { beoordeelCasus, status } from "@/lib/grade";
+import { MC, modusVoor, schud } from "@/lib/mc";
 import { BronBlok } from "./BronBlok";
 import { UitspraakBlok } from "./UitspraakBlok";
 
 export function Toets({
   casussen,
   aspecten,
+  vorm,
   onKlaar,
 }: {
   casussen: Casus[];
   aspecten: AspectKey[];
+  vorm: Vraagvorm;
   onKlaar: (r: CasusResultaat[]) => void;
 }) {
   const [i, setI] = useState(0);
   const [fase, setFase] = useState<"invullen" | "feedback">("invullen");
   const [antw, setAntw] = useState<Partial<Record<AspectKey, string>>>({});
+  const [keuze, setKeuze] = useState<Partial<Record<AspectKey, string>>>({});
   const [res, setRes] = useState<CasusResultaat[]>([]);
   const casus = casussen[i];
   const huidig = res[i];
 
+  const modi = useMemo(
+    () =>
+      Object.fromEntries(ALLE_ASPECTEN.map((k) => [k, modusVoor(vorm, casus.id, k)])) as Record<
+        AspectKey,
+        "open" | "mc"
+      >,
+    [vorm, casus.id]
+  );
+
   const controleer = () => {
-    const r = beoordeelCasus(casus, antw, aspecten);
+    const r = beoordeelCasus(casus, antw, aspecten, modi, keuze);
     setRes((x) => {
       const n = [...x];
       n[i] = r;
@@ -35,6 +56,7 @@ export function Toets({
     if (i + 1 >= casussen.length) return onKlaar(res);
     setI(i + 1);
     setAntw({});
+    setKeuze({});
     setFase("invullen");
     window.scrollTo({ top: 0 });
   };
@@ -68,16 +90,38 @@ export function Toets({
             </p>
             {casus.aspecten
               .filter((a) => aspecten.includes(a.key))
-              .map((a) => (
-                <div className="aspect" key={a.key}>
-                  <div className="lbl">{ASPECT_LABELS[a.key]}</div>
-                  <div className="hint">{ASPECT_INSTRUCTIES[a.key]}</div>
-                  <textarea
-                    value={antw[a.key] ?? ""}
-                    onChange={(e) => setAntw({ ...antw, [a.key]: e.target.value })}
-                  />
-                </div>
-              ))}
+              .map((a) => {
+                const mc = modi[a.key] === "mc" ? MC[casus.id]?.[a.key] : undefined;
+                return (
+                  <div className="aspect" key={a.key}>
+                    <div className="lbl">{ASPECT_LABELS[a.key]}</div>
+                    {mc ? (
+                      <>
+                        <div className="hint">{mc.vraag}</div>
+                        {schud(mc.opties, casus.id + a.key).map((o) => (
+                          <label className="opt" key={o.id}>
+                            <input
+                              type="radio"
+                              name={`mc-${casus.id}-${a.key}`}
+                              checked={keuze[a.key] === o.id}
+                              onChange={() => setKeuze({ ...keuze, [a.key]: o.id })}
+                            />
+                            <span>{o.tekst}</span>
+                          </label>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        <div className="hint">{ASPECT_INSTRUCTIES[a.key]}</div>
+                        <textarea
+                          value={antw[a.key] ?? ""}
+                          onChange={(e) => setAntw({ ...antw, [a.key]: e.target.value })}
+                        />
+                      </>
+                    )}
+                  </div>
+                );
+              })}
             <div className="btn-row">
               <button className="btn" onClick={controleer}>
                 Verder
@@ -88,10 +132,38 @@ export function Toets({
           <>
             {huidig.aspecten.map((ar) => {
               const model = casus.aspecten.find((m) => m.key === ar.key)!;
+              if (ar.modus === "mc") {
+                const v = MC[casus.id]![ar.key]!;
+                const goed = ar.score === 1;
+                const juisteTekst = v.opties.find((o) => o.id === v.juist)?.tekst;
+                return (
+                  <div className="aspect" key={ar.key}>
+                    <div className="lbl">
+                      {ASPECT_LABELS[ar.key]}{" "}
+                      <span className={`chip ${goed ? "goed" : "ontbreekt"}`}>{goed ? "Goed" : "Onjuist"}</span>
+                    </div>
+                    <div className="hint">{v.vraag}</div>
+                    <div className="answer">
+                      Jouw keuze: {ar.antwoord || "(niet beantwoord)"}
+                    </div>
+                    {!goed && (
+                      <div className="model">
+                        <b>Juist antwoord:</b> {juisteTekst}
+                      </div>
+                    )}
+                    <div className="model">
+                      <b>Uitleg:</b> {v.uitleg}
+                    </div>
+                    {v.bronIds.map((id) => (
+                      <BronBlok id={id} key={id} />
+                    ))}
+                  </div>
+                );
+              }
               const st = status(ar.score);
               const bronIds = Array.from(
                 new Set(
-                  model.kernpunten
+                  [...model.kernpunten]
                     .sort((a, b) => Number(ar.gemist.includes(b.id)) - Number(ar.gemist.includes(a.id)))
                     .flatMap((k) => k.bronIds)
                 )
@@ -128,10 +200,12 @@ export function Toets({
             {casus.uitspraken.map((e) => (
               <UitspraakBlok ecli={e} key={e} />
             ))}
-            <div className="notice">
-              De beoordeling controleert op kernpunten uit het modelantwoord (trefwoorden), niet op volledige juridische
-              redeneringen. Lees altijd het modelantwoord en de bronnen.
-            </div>
+            {huidig.aspecten.some((a) => a.modus !== "mc") && (
+              <div className="notice">
+                De open vragen worden beoordeeld op kernpunten uit het modelantwoord (trefwoorden), niet op volledige
+                juridische redeneringen. Lees altijd het modelantwoord en de bronnen.
+              </div>
+            )}
             <div className="btn-row">
               <button className="btn" onClick={volgende}>
                 Verder

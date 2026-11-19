@@ -75,6 +75,17 @@ export function Configurator({ start, onStart }: { start: ToetsConfig; onStart: 
             </select>
           </div>
           <div>
+            <div className="muted">Vraagvorm</div>
+            <select
+              value={cfg.vraagvorm ?? "mix"}
+              onChange={(e) => setCfg({ ...cfg, vraagvorm: e.target.value as ToetsConfig["vraagvorm"] })}
+            >
+              <option value="meerkeuze">Meerkeuze (makkelijkst)</option>
+              <option value="mix">Mix: meerkeuze voor grondslag, verdenking en bevoegdheid, de rest open</option>
+              <option value="open">Open vragen (moeilijkst)</option>
+            </select>
+          </div>
+          <div>
             <div className="muted">Focus</div>
             <select value={cfg.focus} onChange={(e) => setCfg({ ...cfg, focus: e.target.value as ToetsConfig["focus"] })}>
               <option value="alle">Alle aspecten</option>
@@ -106,7 +117,7 @@ export function Configurator({ start, onStart }: { start: ToetsConfig; onStart: 
             value=""
             onChange={(e) => {
               const p = profielen.find((x) => x.naam === e.target.value);
-              if (p) setCfg(p.config);
+              if (p) setCfg({ vraagvorm: "mix", ...p.config });
             }}
           >
             <option value="">Laad opgeslagen profiel…</option>

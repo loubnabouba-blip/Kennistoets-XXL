@@ -23,7 +23,7 @@ export function Resultaat({
   for (const r of resultaten) {
     const c = getCasus(r.casusId);
     for (const a of r.aspecten) {
-      const t = c?.aspecten.find((m) => m.key === a.key)?.kernpunten.length ?? 0;
+      const t = a.modus === "mc" ? 1 : c?.aspecten.find((m) => m.key === a.key)?.kernpunten.length ?? 0;
       const e = perAspect.get(a.key) ?? { g: 0, t: 0 };
       perAspect.set(a.key, { g: e.g + a.gehaald.length, t: e.t + t });
     }
@@ -35,7 +35,7 @@ export function Resultaat({
         <thead>
           <tr>
             <th>Aspect</th>
-            <th>Kernpunten geraakt</th>
+            <th>Punten behaald</th>
           </tr>
         </thead>
         <tbody>

@@ -27,7 +27,7 @@ export function registreerResultaten(resultaten: CasusResultaat[]) {
     if (!casus) continue;
     for (const a of r.aspecten) {
       const model = casus.aspecten.find((m) => m.key === a.key);
-      const totaal = model?.kernpunten.length ?? 0;
+      const totaal = a.modus === "mc" ? 1 : model?.kernpunten.length ?? 0;
       const gemist = a.gemist.length;
       const e = z.aspect[a.key] ?? { gemist: 0, totaal: 0 };
       z.aspect[a.key] = { gemist: e.gemist + gemist, totaal: e.totaal + totaal };

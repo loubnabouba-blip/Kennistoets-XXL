@@ -118,7 +118,18 @@ export interface Casus {
   uitspraken: string[];
 }
 
+export type Vraagvorm = "open" | "meerkeuze" | "mix";
+
+export interface MCVraag {
+  vraag: string;
+  opties: { id: string; tekst: string }[];
+  juist: string;
+  uitleg: string;
+  bronIds: string[];
+}
+
 export interface ToetsConfig {
+  vraagvorm?: Vraagvorm;
   niveau: Niveau;
   wetten: WetKey[];
   aantal: number;
@@ -127,6 +138,8 @@ export interface ToetsConfig {
 }
 
 export interface AspectResultaat {
+  modus?: "open" | "mc";
+  gekozen?: string;
   key: AspectKey;
   antwoord: string;
   gehaald: string[];
