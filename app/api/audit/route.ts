@@ -35,18 +35,16 @@ export async function GET(req: Request) {
   if (!WET[wet]) return new Response("onbekende wet", { status: 400 });
   try {
     const a = await haalArtikelLive(WET[wet], art);
-    const uit: unknown[] = [];
     const items = Object.entries(a.leden).length ? Object.entries(a.leden) : [["-", a.heleTekst] as [string, string]];
+    const regels: string[] = [`${wet} art. ${art}, toestand ${a.peildatum}`];
+    probes.forEach((p, i) => regels.push(`P${i + 1} = ${p}`));
     for (const [nr, t] of items) {
       const lo = t.toLowerCase();
-      uit.push({
-        lid: nr,
-        woorden: t.split(/\s+/).length,
-        skelet: skelet(t),
-        probes: Object.fromEntries(probes.map((p) => [p, lo.includes(p)])),
-      });
+      const res = probes.map((p, i) => `P${i + 1}=${lo.includes(p) ? "JA" : "NEE"}`).join(" ");
+      regels.push(`LID ${nr} (${t.split(/\s+/).length} woorden): ${res}`);
+      if (u.searchParams.get("sk") !== "0") regels.push(`  skelet: ${skelet(t)}`);
     }
-    return Response.json({ wet, art, toestand: a.peildatum, leden: uit });
+    return new Response(regels.join("\n"), { headers: { "content-type": "text/plain; charset=utf-8" } });
   } catch (e) {
     return new Response("FOUT: " + (e instanceof Error ? e.message : "?"), { status: 500 });
   }
