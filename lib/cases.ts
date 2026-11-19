@@ -127,7 +127,7 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "proportionaliteit",
         modelantwoord:
-          "De doorzoeking moet gericht zijn op voor inbeslagneming vatbare voorwerpen en niet verder gaan dan nodig. Een doorzoeking zonder de wettelijke voorwaarden kan een vormverzuim opleveren met mogelijk bewijsuitsluiting (art. 359a Sv), al is dat volgens de Hoge Raad een uitzondering.",
+          "De doorzoeking moet gericht zijn op voor inbeslagneming vatbare voorwerpen en niet verder gaan dan nodig. Een doorzoeking zonder de wettelijke voorwaarden kan een vormverzuim opleveren met mogelijk bewijsuitsluiting (art. 359a Sv); die volgt niet automatisch, maar alleen in bepaalde gevallen na weging van de factoren van art. 359a lid 2 Sv.",
         kernpunten: [
           {
             id: "c1-p1",
@@ -142,7 +142,7 @@ export const CASUS_POOL: Casus[] = [
             label: "Gevolg bij onrechtmatigheid: art. 359a Sv",
             patronen: ["359a", "bewijsuitsluiting", "vormverzuim"],
             toelichting:
-              "De Hoge Raad (2023) overwoog dat bewijsuitsluiting bij onrechtmatige doorzoeking niet automatisch volgt.",
+              "In HR 19 september 2023 overwoog de Hoge Raad dat bewijsuitsluiting als rechtsgevolg van een vormverzuim (art. 359a Sv) alleen in bepaalde gevallen aan de orde kan zijn.",
             bronIds: [],
           },
         ],

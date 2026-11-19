@@ -22,7 +22,11 @@ npm run dev     # http://localhost:3000
 - Snapshots met "Oudere versie" of "Fragment" zijn gemarkeerd; controleer die via de bronlink.
 - De feedback is trefwoord-gebaseerd (kernpunten in `lib/cases.ts`), geen volledige juridische beoordeling.
 
+## Controle (19-11-2026)
+Alle bronsnapshots zijn woord voor woord vergeleken met de live toestand-XML (peildatum 2026-07-01/2026-10-01). Voor Sv 27, 53, 56, 96b, 97, Awbi 2 en 3, Opiumwet 2 en 3, Gemeentewet 172, 175 en 176, WWM 13 en 26, WVW 163 (lid 1, 4, 5), Wid 2 en Pw 8 klopt elk fragment en elke "volledig"-vlag. De vergelijking is gedaan met een tijdelijke route die daarna is verwijderd.
+
 ## Nog te doen
-- Live-koppeling testen; meer casussen (WWM, WVW, Wid, Wth, Alcoholwet, WED, APV, Wom).
+- Meer casussen (Wth, Alcoholwet, WED, APV, Wom, Wet dieren, Politiewet art. 7).
+- Inhoudelijke controle van de modelantwoorden door een vakinhoudelijk deskundige (jurist/HOvJ).
 - Automatisch nieuwe casussen genereren uit live bronnen (vereist een LLM-koppeling met bronverificatie).
 - Aanmelding/accounts en server-side opslag van leerresultaten.

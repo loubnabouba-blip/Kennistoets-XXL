@@ -343,7 +343,7 @@ export const UITSPRAKEN: BronUitspraak[] = [
     instantie: "Hoge Raad",
     datum: "2023-09-19",
     samenvatting:
-      "Doorzoeking van een voertuig op grond van art. 96b Sv terwijl er geen heterdaad of verdenking van een misdrijf als bedoeld in art. 67 lid 1 Sv was. Het hof sloot bewijs uit; de Hoge Raad vond dat onvoldoende gemotiveerd en overwoog dat bewijsuitsluiting een uitzondering is en afhangt van de factoren in art. 359a lid 2 Sv. Bij een inbreuk op de persoonlijke levenssfeer kan strafvermindering passender zijn.",
+      "Het hof achtte de doorzoeking van een voertuig onrechtmatig (vormverzuim, art. 359a Sv) en sloot het bewijs uit. De Hoge Raad vond die motivering onvoldoende begrijpelijk, herhaalde de overwegingen over de gevallen waarin bewijsuitsluiting aan de orde kan zijn en vernietigde het arrest met terugwijzing.",
     url: "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2023:1264",
   },
   {
@@ -351,7 +351,7 @@ export const UITSPRAKEN: BronUitspraak[] = [
     instantie: "Hoge Raad",
     datum: "2015-01-06",
     samenvatting:
-      "Zaak over de doorzoeking van de woning van een verdachte zonder voorafgaande machtiging van de rechter-commissaris of toestemming van de verdachte, na een Opiumwet-transactie. Onderwerpen: redelijk vermoeden van schuld (art. 27 Sv) en bewijsuitsluiting (art. 359a Sv).",
+      "Zaak over een doorzoeking van de woning van een verdachte zonder voorafgaande machtiging van de rechter-commissaris en zonder toestemming van de verdachte. Onderwerp: vormverzuim (art. 359a Sv) en de vraag of dat tot bewijsuitsluiting moet leiden; de Hoge Raad liet het oordeel van het hof in stand.",
     url: "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:HR:2015:4",
   },
 ];

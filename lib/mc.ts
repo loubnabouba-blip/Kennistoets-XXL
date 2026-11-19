@@ -47,9 +47,9 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
     ),
     proportionaliteit: q(
       "Wat kan het gevolg zijn als een doorzoeking zonder de wettelijke voorwaarden is verricht?",
-      "Bewijsuitsluiting is mogelijk (art. 359a Sv), maar volgens de Hoge Raad een uitzondering",
+      "Bewijsuitsluiting is mogelijk (art. 359a Sv), maar alleen in bepaalde gevallen en na weging van de factoren van lid 2",
       ["Het bewijs wordt altijd automatisch uitgesloten", "Er kan nooit een gevolg aan verbonden worden"],
-      "De Hoge Raad (2023) overwoog dat bewijsuitsluiting een uitzondering is en afhangt van de factoren in art. 359a lid 2 Sv.",
+      "Art. 359a Sv: bewijsuitsluiting is een mogelijk rechtsgevolg van een vormverzuim. De Hoge Raad overwoog in 2023 dat het alleen in bepaalde gevallen aan de orde kan zijn; of daartoe grond bestaat, volgt uit de factoren van art. 359a lid 2 Sv.",
       []
     ),
   },
