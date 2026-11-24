@@ -4,7 +4,7 @@ import { BRONNEN } from "@/lib/sources";
 export const dynamic = "force-dynamic";
 const WET: Record<string, string> = {
   SV: "BWBR0001903", AWBI: "BWBR0006763", OW: "BWBR0001941", GW: "BWBR0005416",
-  WWM: "BWBR0008804", WVW: "BWBR0006622", WID: "BWBR0006297", PW: "BWBR0031788", WED: "BWBR0002063", ALCW: "BWBR0002458",
+  WWM: "BWBR0008804", WVW: "BWBR0006622", WID: "BWBR0006297", PW: "BWBR0031788", SR: "BWBR0001854", WED: "BWBR0002063", ALCW: "BWBR0002458",
 };
 // Sleutelwoorden (prefix-match). Alle andere woorden worden vervangen door "…".
 const KEY = [
