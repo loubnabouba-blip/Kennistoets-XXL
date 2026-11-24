@@ -18,6 +18,7 @@ const WWM = "BWBR0008804";
 const WVW = "BWBR0006622";
 const WID = "BWBR0006297";
 const PW = "BWBR0031788";
+const ALCW = "BWBR0002458";
 
 export const BRONNEN: BronArtikel[] = [
   // ---------- Wetboek van Strafvordering ----------
@@ -310,6 +311,30 @@ export const BRONNEN: BronArtikel[] = [
     volledig: false,
     peildatum: "2026-09-01",
     url: wettenUrl(WVW, "163"),
+  },
+  // ---------- Alcoholwet ----------
+  {
+    id: "alcw-45-1",
+    wet: "Alcoholwet",
+    bwb: ALCW,
+    artikel: "45",
+    lid: "1",
+    tekst:
+      "Het is degenen die de leeftijd van 18 jaar nog niet hebben bereikt, met uitzondering van personen van 16 of 17 jaar die dienst doen […] verboden […] in voor publiek toegankelijke plaatsen alcoholhoudende drank aanwezig te hebben […]",
+    volledig: false,
+    peildatum: "2025-02-12",
+    url: wettenUrl(ALCW, "45"),
+  },
+  {
+    id: "alcw-45-3",
+    wet: "Alcoholwet",
+    bwb: ALCW,
+    artikel: "45",
+    lid: "3",
+    tekst: "Overtreding van het eerste lid wordt gestraft met […] eerste categorie, bedoeld in artikel 23 […]",
+    volledig: false,
+    peildatum: "2025-02-12",
+    url: wettenUrl(ALCW, "45"),
   },
   // ---------- Wet op de identificatieplicht / Politiewet 2012 ----------
   {

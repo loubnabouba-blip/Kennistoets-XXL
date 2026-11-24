@@ -716,14 +716,14 @@ export const CASUS_POOL: Casus[] = [
       {
         key: "verdenking",
         modelantwoord:
-          "Er is geen verdenking van een strafbaar feit nodig. De vordering moet wel noodzakelijk zijn voor de uitoefening van de politietaak; de bron bevat de volledige voorwaarde.",
+          "Er is geen verdenking van een strafbaar feit nodig. De vordering moet wel noodzakelijk zijn voor de uitoefening van de politietaak.",
         kernpunten: [
           {
             id: "c6-v1",
             label: "Noodzakelijk voor de politietaak (geen verdenking vereist)",
             patronen: ["noodzak", "politietaak", "geen verdenking", "taak"],
             toelichting:
-              "Art. 8 lid 1 Pw 2012 koppelt de vordering aan wat nodig is voor de uitoefening van de politietaak. De snapshot is een fragment: lees de volledige voorwaarde in de bron.",
+              "Art. 8 lid 1 Pw 2012 koppelt de vordering aan wat nodig is voor de uitoefening van de politietaak.",
             bronIds: ["pw-8-1"],
           },
         ],
@@ -773,6 +773,107 @@ export const CASUS_POOL: Casus[] = [
             label: "Noodzaak en redelijkheid van de vordering",
             patronen: ["noodzak", "redelijk", "proportion", "subsidiar", "evenredig"],
             toelichting: "Art. 8 lid 1 Pw 2012 beperkt de vordering tot wat voor de taak nodig is.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "c7-alcoholwet-park",
+    titel: "Zestienjarige met bier in het stadspark",
+    niveau: ["agent", "gemengd"],
+    wetten: ["alcoholwet", "wid", "pw"],
+    vraag:
+      "Welke bevoegdheden hebben de agenten tegenover Daan (16) en hoe gaan zij daar evenredig mee om? Werk de vijf aspecten uit.",
+    situatie: [
+      "Op een zaterdagavond lopen twee agenten door het stadspark, een voor publiek toegankelijke plaats. Zij zien Daan (16) op een bankje uit een blikje bier drinken. Een tweede blikje staat naast hem.",
+      "Daan werkt niet bij een horecabedrijf en is niet bezig met een opleiding waarbij hij alcohol verstrekt. Hij is rustig en werkt mee. De agenten willen weten wie hij is.",
+    ],
+    bijlage: {
+      titel: "Aantekening agent (fictief)",
+      inhoud:
+        "21.40 uur: jongen op bankje, drinkt uit blikje bier, tweede blikje naast hem. Park vrij toegankelijk. Hij zegt 16 te zijn. Geen overlast, geen agressie.",
+    },
+    uitspraken: [],
+    aspecten: [
+      {
+        key: "grondslag",
+        modelantwoord:
+          "Het verbod staat in art. 45 lid 1 Alcoholwet: wie de leeftijd van 18 jaar nog niet heeft bereikt, mag in voor publiek toegankelijke plaatsen geen alcoholhoudende drank aanwezig hebben. Overtreding is strafbaar (lid 3, geldboete van de eerste categorie). De bevoegdheid om inzage van een identiteitsbewijs te vorderen volgt uit art. 8 lid 1 Politiewet 2012, de toonplicht uit art. 2 Wid.",
+        kernpunten: [
+          {
+            id: "c7-g1",
+            label: "Art. 45 lid 1 Alcoholwet (verbod aanwezig hebben)",
+            patronen: ["45", "alcoholwet"],
+            toelichting:
+              "Art. 45 lid 1 Alcoholwet verbiedt personen onder de 18 jaar alcoholhoudende drank aanwezig te hebben in voor publiek toegankelijke plaatsen. Art. 20 is het verstrekkingsverbod voor de verstrekker en dus niet de grondslag voor Daan zelf.",
+            bronIds: ["alcw-45-1"],
+          },
+          {
+            id: "c7-g2",
+            label: "Strafbaarheid (art. 45 lid 3) en vordering identiteitsbewijs (Pw 8, Wid 2)",
+            patronen: ["lid 3", "boete", "categorie", "art\\. 8", "politiewet", "\\bwid\\b"],
+            toelichting:
+              "Lid 3 bepaalt de straf (geldboete van de eerste categorie). Voor het vorderen van het identiteitsbewijs gelden art. 8 lid 1 Pw 2012 en art. 2 Wid.",
+            bronIds: ["alcw-45-3", "pw-8-1", "wid-2"],
+          },
+        ],
+      },
+      {
+        key: "verdenking",
+        modelantwoord:
+          "Daan wordt verdacht van een overtreding van art. 45 lid 1 Alcoholwet. Dat is een strafbaar feit; er is een redelijk vermoeden van schuld (art. 27 lid 1 Sv) omdat de agenten zelf waarnemen dat hij het blikje bier heeft en gebruikt.",
+        kernpunten: [
+          {
+            id: "c7-v1",
+            label: "Redelijk vermoeden van schuld (art. 27 Sv), eigen waarneming",
+            patronen: ["redelijk vermoeden", "art\\. 27", "waarneem", "waargenomen", "zien"],
+            toelichting:
+              "Art. 27 lid 1 Sv: verdachte is degene te wiens aanzien uit feiten of omstandigheden een redelijk vermoeden van schuld voortvloeit. Hier berust dat op de eigen waarneming van de agenten.",
+            bronIds: ["sv-27-1"],
+          },
+        ],
+      },
+      {
+        key: "bevoegd",
+        modelantwoord:
+          "Iedere ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak is bevoegd inzage van een identiteitsbewijs te vorderen (art. 8 lid 1 Pw 2012). Een hulpofficier van justitie is daarvoor niet nodig.",
+        kernpunten: [
+          {
+            id: "c7-b1",
+            label: "Ambtenaar van politie (art. 8 lid 1 Pw 2012)",
+            patronen: ["politie", "agent", "ambtenaar"],
+            toelichting: "Art. 8 lid 1 Pw 2012 noemt de ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak.",
+            bronIds: ["pw-8-1"],
+          },
+        ],
+      },
+      {
+        key: "vorm",
+        modelantwoord:
+          "Daan is 16 en valt dus onder de toonplicht van art. 2 Wid (vanaf veertien jaar). Hij moet op de eerste vordering van de agent een identiteitsbewijs ter inzage aanbieden.",
+        kernpunten: [
+          {
+            id: "c7-f1",
+            label: "Toonplicht vanaf veertien jaar, op de eerste vordering",
+            patronen: ["\\b14\\b", "veertien", "eerste vordering", "toonplicht", "\\bwid\\b"],
+            toelichting: "Art. 2 Wid: een ieder van veertien jaar of ouder moet op de eerste vordering een identiteitsbewijs ter inzage aanbieden.",
+            bronIds: ["wid-2"],
+          },
+        ],
+      },
+      {
+        key: "proportionaliteit",
+        modelantwoord:
+          "Gezien de geringe ernst, Daans medewerking en de afwezigheid van overlast is het lichtste passende middel: hem aanspreken, zijn identiteit vaststellen en de overtreding vastleggen. Aanhouding zou een zwaardere inbreuk zijn dan voor dit feit nodig is. De vordering van het identiteitsbewijs moet redelijkerwijs noodzakelijk zijn voor de uitvoering van de politietaak (art. 8 lid 1 Pw 2012); dat is hier het geval omdat het feit moet worden vastgelegd.",
+        kernpunten: [
+          {
+            id: "c7-p1",
+            label: "Lichtste middel; aanhouding niet nodig",
+            patronen: ["proportion", "subsidiar", "evenredig", "lichtste", "geen aanhouding", "niet aanhouden", "aanhouding.*niet", "niet.*aanhoud"],
+            toelichting:
+              "Subsidiariteit en proportionaliteit: kies het lichtste middel dat het doel bereikt. Daans medewerking en de geringe ernst maken aanhouding onnodig; vaststellen van identiteit en vastleggen van het feit volstaan.",
             bronIds: ["pw-8-1"],
           },
         ],

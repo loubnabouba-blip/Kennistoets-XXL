@@ -225,7 +225,7 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       "Is voor het vorderen van inzage van een identiteitsbewijs een verdenking van een strafbaar feit nodig?",
       "Nee, de vordering moet noodzakelijk zijn voor de uitoefening van de politietaak",
       ["Ja, altijd", "Ja, alleen bij heterdaad", "Nee, de agent mag dit volledig vrij doen"],
-      "Art. 8 lid 1 Pw 2012 koppelt de vordering aan wat nodig is voor de politietaak. De snapshot is een fragment: lees de volledige voorwaarde in de bron.",
+      "Art. 8 lid 1 Pw 2012 koppelt de vordering aan wat nodig is voor de politietaak.",
       ["pw-8-1"]
     ),
     bevoegd: q(
@@ -247,6 +247,43 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       "Ze moet noodzakelijk zijn voor de uitoefening van de politietaak",
       ["Ze mag willekeurig worden gedaan", "Ze mag alleen bij verdenking van een misdrijf", "Ze is nooit toegestaan"],
       "Art. 8 lid 1 Pw 2012 beperkt de vordering tot wat voor de taak nodig is.",
+      ["pw-8-1"]
+    ),
+  },
+  "c7-alcoholwet-park": {
+    grondslag: q(
+      "Welke bepaling verbiedt een 16-jarige om in het park alcoholhoudende drank aanwezig te hebben?",
+      "Art. 45 lid 1 Alcoholwet",
+      ["Art. 20 lid 1 Alcoholwet (verstrekken door een verkoper)", "Art. 2 Opiumwet", "Art. 172 Gemeentewet"],
+      "Art. 45 lid 1 Alcoholwet verbiedt personen onder de 18 jaar alcoholhoudende drank aanwezig te hebben in voor publiek toegankelijke plaatsen. Art. 20 is het verbod voor wie alcohol verstrekt.",
+      ["alcw-45-1"]
+    ),
+    verdenking: q(
+      "Waarop berust hier de verdenking van Daan?",
+      "Op een redelijk vermoeden van schuld aan een overtreding (art. 27 Sv), hier door eigen waarneming van de agenten",
+      ["Op een melding van de meldkamer, zonder eigen waarneming", "Op ernstige bezwaren zoals bij aanhouding van een misdrijf", "Op het feit dat hij minderjarig is, ook zonder alcohol"],
+      "Art. 27 lid 1 Sv: een redelijk vermoeden van schuld uit feiten of omstandigheden. De agenten zien het blikje zelf.",
+      ["sv-27-1"]
+    ),
+    bevoegd: q(
+      "Wie is bevoegd inzage van het identiteitsbewijs van Daan te vorderen?",
+      "Iedere ambtenaar van politie aangesteld voor de uitvoering van de politietaak, dus ook de agent zelf",
+      ["Alleen een hulpofficier van justitie", "Alleen de officier van justitie", "Alleen de burgemeester"],
+      "Art. 8 lid 1 Pw 2012: de ambtenaar van politie die is aangesteld voor de uitvoering van de politietaak.",
+      ["pw-8-1"]
+    ),
+    vorm: q(
+      "Moet Daan (16) op de eerste vordering een identiteitsbewijs tonen?",
+      "Ja, de toonplicht geldt vanaf veertien jaar (art. 2 Wid)",
+      ["Nee, alleen volwassenen van achttien jaar en ouder", "Nee, tenzij hij is aangehouden", "Ja, maar pas na een bevel van de officier van justitie"],
+      "Art. 2 Wid: een ieder die de leeftijd van veertien jaar heeft bereikt, op de eerste vordering.",
+      ["wid-2"]
+    ),
+    proportionaliteit: q(
+      "Wat past het best bij de ernst van dit feit en Daans medewerking?",
+      "Hem aanspreken, zijn identiteit vaststellen en het feit vastleggen; aanhouding is niet nodig",
+      ["Hem direct aanhouden en overbrengen naar het bureau", "Niets doen, want alcohol in een park is toegestaan", "Zijn woning doorzoeken naar meer alcohol"],
+      "Kies het lichtste middel dat het doel bereikt (subsidiariteit en proportionaliteit). Aanhouding is een zwaardere inbreuk en hier niet nodig.",
       ["pw-8-1"]
     ),
   },
