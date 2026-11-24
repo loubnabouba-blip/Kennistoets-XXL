@@ -26,7 +26,7 @@ npm run dev     # http://localhost:3000
 Alle bronsnapshots zijn woord voor woord vergeleken met de live toestand-XML (peildatum 2026-07-01/2026-10-01). Voor Sv 27, 53, 56, 96b, 97, Awbi 2 en 3, Opiumwet 2 en 3, Gemeentewet 172, 175 en 176, WWM 13 en 26, WVW 163 (lid 1, 4, 5), Wid 2 en Pw 8 klopt elk fragment en elke "volledig"-vlag. De vergelijking is gedaan met een tijdelijke route die daarna is verwijderd.
 
 ## Nog te doen
-- Meer casussen (WED, Wth, APV, Wom, Wet dieren, Politiewet art. 7). Alcoholwet: casus 7 (art. 45) staat erin; art. 20 volgt zodra de aangekondigde wijziging (afleveren bij verkoop op afstand) in werking is.
+- Meer basisbevoegdheden uit Sv: casus 8 (art. 53, 128 Sv; art. 310 Sr) staat erin. Nog te lezen en uit te werken: art. 54, 55, 56, 56a (ophouden voor onderzoek) Ook: Wth, APV, Wom, Wet dieren, Politiewet art. 7. WED is bewust nog niet opgenomen (art. 2 en 17–23 moeten eerst letterlijk gelezen zijn). Alcoholwet: casus 7 (art. 45) staat erin; art. 20 volgt zodra de aangekondigde wijziging (afleveren bij verkoop op afstand) in werking is.
 - Inhoudelijke controle van de modelantwoorden door een vakinhoudelijk deskundige (jurist/HOvJ).
 - Automatisch nieuwe casussen genereren uit live bronnen (vereist een LLM-koppeling met bronverificatie).
 - Aanmelding/accounts en server-side opslag van leerresultaten.
