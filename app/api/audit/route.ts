@@ -72,6 +72,21 @@ async function delen(id: string) {
 }
 export async function GET(req: Request) {
   const u = new URL(req.url);
+  if (u.searchParams.get("mode") === "zoek") {
+    const wt = (u.searchParams.get("wet") ?? "").toUpperCase();
+    if (!WET[wt]) return new Response("onbekende wet", { status: 400 });
+    const aa = await haalArtikelLive(WET[wt], u.searchParams.get("art") ?? "");
+    const ws = aa.heleTekst.split(/\s+/);
+    const q = (u.searchParams.get("q") ?? "").toLowerCase();
+    const uit: string[] = [];
+    for (let i = 0; i < ws.length && uit.length < 4; i++) {
+      if (ws[i].toLowerCase().includes(q.split(" ")[0])) {
+        const ctx = ws.slice(Math.max(0, i - 7), i + 8).join(" ");
+        if (ctx.toLowerCase().includes(q)) uit.push(`@${i}: ${ctx}`);
+      }
+    }
+    return new Response(`zoek "${q}": ${uit.length} treffers\n` + uit.join("\n"), { headers: { "content-type": "text/plain; charset=utf-8" } });
+  }
   if (u.searchParams.get("mode") === "w") {
     const wt = (u.searchParams.get("wet") ?? "").toUpperCase();
     if (!WET[wt]) return new Response("onbekende wet", { status: 400 });
