@@ -788,7 +788,7 @@ export const CASUS_POOL: Casus[] = [
       "Welke bevoegdheden hebben de agenten tegenover Daan (16) en hoe gaan zij daar evenredig mee om? Werk de vijf aspecten uit.",
     situatie: [
       "Op een zaterdagavond lopen twee agenten door het stadspark, een voor publiek toegankelijke plaats. Zij zien Daan (16) op een bankje uit een blikje bier drinken. Een tweede blikje staat naast hem.",
-      "Daan werkt niet bij een horecabedrijf en is niet bezig met een opleiding waarbij hij alcohol verstrekt. Hij is rustig en werkt mee. De agenten willen weten wie hij is.",
+      "Daan werkt niet in een bedrijf dat alcohol verstrekt. Hij is rustig en werkt mee. De agenten willen weten wie hij is.",
     ],
     bijlage: {
       titel: "Aantekening agent (fictief)",
