@@ -19,6 +19,7 @@ const WVW = "BWBR0006622";
 const WID = "BWBR0006297";
 const PW = "BWBR0031788";
 const ALCW = "BWBR0002458";
+const SR = "BWBR0001854";
 
 export const BRONNEN: BronArtikel[] = [
   // ---------- Wetboek van Strafvordering ----------
@@ -105,6 +106,67 @@ export const BRONNEN: BronArtikel[] = [
     volledig: true,
     peildatum: "2026-07-01",
     url: wettenUrl(SV, "97"),
+  },
+  // ---------- Sv: aanhouding op heterdaad ----------
+  {
+    id: "sv-53-1",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "53",
+    lid: "1",
+    tekst:
+      "In geval van ontdekking op heterdaad van een strafbaar feit is een ieder bevoegd de verdachte aan te houden.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "53"),
+  },
+  {
+    id: "sv-53-3",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "53",
+    lid: "3",
+    tekst:
+      "Geschiedt de aanhouding door een ander dan een opsporingsambtenaar, dan levert deze de aangehoudene onverwijld aan een opsporingsambtenaar over, onder afgifte aan deze van bij de verdachte aangetroffen voorwerpen. De opsporingsambtenaar handelt overeenkomstig de bepaling van het tweede lid en maakt zo nodig een kennisgeving van inbeslagneming op.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "53"),
+  },
+  {
+    id: "sv-53-4",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "53",
+    lid: "4",
+    tekst:
+      "Bij de voorgeleiding van de verdachte aan de hulpofficier van justitie of de officier van justitie beoordeelt deze de noodzaak van verdere vrijheidsbeneming op grond van artikel 56a.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "53"),
+  },
+  {
+    id: "sv-128-1",
+    wet: "Wetboek van Strafvordering",
+    bwb: SV,
+    artikel: "128",
+    lid: "1",
+    tekst:
+      "Ontdekking op heeter daad heeft plaats, wanneer het strafbare feit ontdekt wordt, terwijl het begaan wordt of terstond nadat het begaan is.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SV, "128"),
+  },
+  // ---------- Sr ----------
+  {
+    id: "sr-310",
+    wet: "Wetboek van Strafrecht",
+    bwb: SR,
+    artikel: "310",
+    tekst:
+      "Hij die enig goed dat geheel of ten dele aan een ander toebehoort wegneemt, met het oogmerk om het zich wederrechtelijk toe te eigenen, wordt, als schuldig aan diefstal, gestraft met gevangenisstraf van ten hoogste vier jaren of geldboete van de vierde categorie.",
+    volledig: true,
+    peildatum: "2026-07-01",
+    url: wettenUrl(SR, "310"),
   },
   // ---------- Algemene wet op het binnentreden ----------
   {

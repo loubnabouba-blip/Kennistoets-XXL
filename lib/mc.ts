@@ -287,6 +287,43 @@ export const MC: Record<string, Partial<Record<AspectKey, MCVraag>>> = {
       ["pw-8-1"]
     ),
   },
+  "c8-heterdaad-winkel": {
+    grondslag: q(
+      "Op welke bepaling berust de bevoegdheid van beveiliger Sam om Mo aan te houden?",
+      "Art. 53 lid 1 Sv: bij ontdekking op heterdaad van een strafbaar feit is een ieder bevoegd de verdachte aan te houden",
+      ["Art. 310 Sr, want die bepaling geeft de beveiliger een aanhoudingsbevoegdheid", "Art. 27 lid 1 Sv, want die bepaling regelt wie mag aanhouden", "Alleen de huisregels van de winkel; een strafvorderlijke bevoegdheid heeft hij niet"],
+      "Art. 53 lid 1 Sv geeft een ieder de bevoegdheid. Art. 310 Sr is het strafbare feit (diefstal) en art. 27 Sv omschrijft wie verdachte is.",
+      ["sv-53-1"]
+    ),
+    verdenking: q(
+      "Wanneer is er sprake van ontdekking op heterdaad?",
+      "Wanneer het strafbare feit ontdekt wordt terwijl het begaan wordt of terstond nadat het begaan is (art. 128 lid 1 Sv)",
+      ["Wanneer de verdachte binnen 24 uur na het feit wordt aangehouden", "Alleen als het feit op camerabeelden is terug te zien", "Zodra er een redelijk vermoeden van schuld bestaat, ook als niemand het feit heeft waargenomen"],
+      "Art. 128 lid 1 Sv bepaalt het moment: terwijl het begaan wordt of terstond nadat het begaan is. Een redelijk vermoeden van schuld (art. 27 Sv) is een ander criterium.",
+      ["sv-128-1"]
+    ),
+    bevoegd: q(
+      "Mag Sam Mo aanhouden terwijl hij geen opsporingsambtenaar is?",
+      "Ja, bij ontdekking op heterdaad van een strafbaar feit is een ieder daartoe bevoegd (art. 53 lid 1 Sv)",
+      ["Nee, aanhouden mag alleen een opsporingsambtenaar", "Nee, alleen met machtiging van de officier van justitie", "Ja, maar alleen met schriftelijke toestemming van de winkeleigenaar"],
+      "Art. 53 lid 1 Sv noemt een ieder; een machtiging of toestemming is daarvoor niet vereist.",
+      ["sv-53-1"]
+    ),
+    vorm: q(
+      "Wat moet Sam doen nadat hij Mo heeft aangehouden?",
+      "Mo onverwijld aan een opsporingsambtenaar overleveren, onder afgifte van de bij hem aangetroffen voorwerpen (art. 53 lid 3 Sv)",
+      ["Mo in de winkel vasthouden tot de eigenaar de schade heeft geregeld", "Zelf een proces-verbaal opmaken en Mo laten gaan", "Mo zelf naar het bureau brengen voor voorgeleiding aan de hulpofficier van justitie"],
+      "Art. 53 lid 3 Sv: wie als ander dan een opsporingsambtenaar aanhoudt, levert de aangehoudene onverwijld over en geeft de aangetroffen voorwerpen af.",
+      ["sv-53-3"]
+    ),
+    proportionaliteit: q(
+      "Wat beoordeelt de hulpofficier van justitie of de officier van justitie bij de voorgeleiding van Mo?",
+      "De noodzaak van verdere vrijheidsbeneming op grond van art. 56a Sv (art. 53 lid 4 Sv)",
+      ["Alleen of de aanhouding door Sam formeel juist was; de noodzaak speelt dan geen rol meer", "De hoogte van de straf voor de diefstal", "Of de winkel schadevergoeding krijgt"],
+      "Art. 53 lid 4 Sv: bij de voorgeleiding wordt de noodzaak van verdere vrijheidsbeneming beoordeeld op grond van art. 56a. Zo blijft vrijheidsbeneming beperkt tot wat nodig is.",
+      ["sv-53-4"]
+    ),
+  },
 };
 
 /** Welke aspecten bij 'mix' als meerkeuze worden gesteld: de kennisvragen. De rest blijft open. */

@@ -880,6 +880,133 @@ export const CASUS_POOL: Casus[] = [
       },
     ],
   },
+  {
+    id: "c8-heterdaad-winkel",
+    titel: "Beveiliger houdt winkeldief aan",
+    niveau: ["agent", "gemengd"],
+    wetten: ["sv", "sr"],
+    vraag:
+      "Welke bevoegdheden hebben de beveiliger en de agenten bij Mo (25) en wat moeten zij daarbij doen? Werk de vijf aspecten uit.",
+    situatie: [
+      "In een kledingwinkel ziet beveiliger Sam hoe Mo (25) een jas van 80 euro uit het rek pakt, in zijn tas stopt en zonder te betalen langs de kassa naar buiten loopt. Sam is geen opsporingsambtenaar.",
+      "Sam houdt Mo direct buiten de winkel aan en belt de politie. Mo werkt mee en blijft staan. Vijf minuten later arriveren twee agenten.",
+    ],
+    bijlage: {
+      titel: "Aantekening beveiliger (fictief)",
+      inhoud:
+        "15.10 uur: man neemt jas uit rek, steekt die in zijn tas en loopt langs kassa zonder te betalen. Direct buiten de winkel door mij aangehouden. Geen verzet. Jas zit nog in de tas. Politie gebeld.",
+    },
+    uitspraken: [],
+    aspecten: [
+      {
+        key: "grondslag",
+        modelantwoord:
+          "Voor Sam is de grondslag art. 53 lid 1 Sv: bij ontdekking op heterdaad van een strafbaar feit is een ieder bevoegd de verdachte aan te houden. Het strafbare feit is diefstal (art. 310 Sr): het wegnemen van een goed dat geheel of ten dele aan een ander toebehoort, met het oogmerk het zich wederrechtelijk toe te eigenen. Voor de agenten, die Mo overnemen, gelden art. 53 lid 2 en lid 3 Sv.",
+        kernpunten: [
+          {
+            id: "c8-g1",
+            label: "Art. 53 lid 1 Sv: een ieder bevoegd bij heterdaad",
+            patronen: ["53", "een ieder", "iedereen", "ieder"],
+            toelichting:
+              "Art. 53 lid 1 Sv geeft bij ontdekking op heterdaad van een strafbaar feit een ieder de bevoegdheid de verdachte aan te houden.",
+            bronIds: ["sv-53-1"],
+          },
+          {
+            id: "c8-g2",
+            label: "Strafbaar feit: diefstal (art. 310 Sr)",
+            patronen: ["310", "diefstal"],
+            toelichting:
+              "Het wegnemen van de jas met het oogmerk van wederrechtelijke toe-eigening is diefstal (art. 310 Sr).",
+            bronIds: ["sr-310"],
+          },
+        ],
+      },
+      {
+        key: "verdenking",
+        modelantwoord:
+          "Er is ontdekking op heterdaad (art. 128 lid 1 Sv): het strafbare feit wordt ontdekt terwijl het begaan wordt of terstond nadat het begaan is. Sam zag het wegnemen en hield Mo direct buiten de winkel aan. Daarnaast bestaat een redelijk vermoeden van schuld (art. 27 lid 1 Sv), gebaseerd op Sams eigen waarneming.",
+        kernpunten: [
+          {
+            id: "c8-v1",
+            label: "Ontdekking op heterdaad (art. 128 lid 1 Sv)",
+            patronen: ["heterdaad", "heeter daad", "128", "terstond"],
+            toelichting:
+              "Art. 128 lid 1 Sv: ontdekking op heterdaad heeft plaats wanneer het strafbare feit ontdekt wordt terwijl het begaan wordt of terstond nadat het begaan is.",
+            bronIds: ["sv-128-1"],
+          },
+          {
+            id: "c8-v2",
+            label: "Redelijk vermoeden van schuld (art. 27 Sv), eigen waarneming",
+            patronen: ["redelijk vermoeden", "art\\. 27", "waarneem", "waargenomen", "gezien"],
+            toelichting:
+              "Art. 27 lid 1 Sv: verdachte is degene te wiens aanzien uit feiten of omstandigheden een redelijk vermoeden van schuld voortvloeit. Hier berust dat op de eigen waarneming van Sam.",
+            bronIds: ["sv-27-1"],
+          },
+        ],
+      },
+      {
+        key: "bevoegd",
+        modelantwoord:
+          "Sam is geen opsporingsambtenaar, maar art. 53 lid 1 Sv geeft ook een ander dan een opsporingsambtenaar de bevoegdheid tot aanhouding bij heterdaad. De agenten zijn opsporingsambtenaren en nemen Mo over (lid 3); zij handelen volgens lid 2. Bij de voorgeleiding beoordeelt de hulpofficier van justitie of de officier van justitie de noodzaak van verdere vrijheidsbeneming (lid 4).",
+        kernpunten: [
+          {
+            id: "c8-b1",
+            label: "Ieder is bevoegd, ook de beveiliger; agenten als opsporingsambtenaar",
+            patronen: ["ieder", "iedereen", "beveiliger", "ander dan een opsporingsambtenaar", "opsporingsambtenaar"],
+            toelichting:
+              "Aanhouden bij heterdaad mag een ieder (lid 1). De agenten treden op als opsporingsambtenaar (lid 2 en 3).",
+            bronIds: ["sv-53-1", "sv-53-3"],
+          },
+        ],
+      },
+      {
+        key: "vorm",
+        modelantwoord:
+          "Sam levert Mo onverwijld aan een opsporingsambtenaar over en geeft daarbij de bij Mo aangetroffen voorwerpen (de jas) af (art. 53 lid 3 Sv). De agent handelt volgens lid 2: hij brengt Mo ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier van justitie of de officier van justitie, en maakt zo nodig een kennisgeving van inbeslagneming op (lid 3).",
+        kernpunten: [
+          {
+            id: "c8-f1",
+            label: "Onverwijld overleveren met afgifte van voorwerpen (lid 3)",
+            patronen: ["onverwijld", "afgifte", "overlever", "overdr", "lid 3"],
+            toelichting:
+              "Art. 53 lid 3 Sv: wie als ander dan een opsporingsambtenaar aanhoudt, levert de aangehoudene onverwijld over aan een opsporingsambtenaar, onder afgifte van de bij de verdachte aangetroffen voorwerpen.",
+            bronIds: ["sv-53-3"],
+          },
+          {
+            id: "c8-f2",
+            label: "Ten spoedigste naar de plaats voor verhoor, voorgeleiding HOvJ/OvJ (lid 2)",
+            patronen: ["ten spoedigste", "voorgeleid", "voorgeleiding", "hulpofficier", "hovj", "plaats voor verhoor"],
+            toelichting:
+              "Art. 53 lid 2 Sv: de opsporingsambtenaar brengt de verdachte ten spoedigste over naar de plaats voor verhoor ter voorgeleiding aan de hulpofficier van justitie of de officier van justitie.",
+            bronIds: ["sv-53-2"],
+          },
+          {
+            id: "c8-f3",
+            label: "Kennisgeving van inbeslagneming (lid 3)",
+            patronen: ["kennisgeving", "inbeslagneming", "in beslag"],
+            toelichting:
+              "Art. 53 lid 3 Sv: de opsporingsambtenaar maakt zo nodig een kennisgeving van inbeslagneming op.",
+            bronIds: ["sv-53-3"],
+          },
+        ],
+      },
+      {
+        key: "proportionaliteit",
+        modelantwoord:
+          "De aanhouding door Sam voorkomt dat Mo met de jas vertrekt, maar leidt niet automatisch tot verdere vrijheidsbeneming. Bij de voorgeleiding beoordeelt de hulpofficier van justitie of de officier van justitie de noodzaak van verdere vrijheidsbeneming op grond van art. 56a Sv (art. 53 lid 4 Sv). Voor de agenten betekent dit: zij kiezen het lichtste middel dat het doel bereikt. Omdat Mo meewerkt en niet probeert te vluchten, zijn extra dwangmiddelen niet nodig.",
+        kernpunten: [
+          {
+            id: "c8-p1",
+            label: "Noodzaak van verdere vrijheidsbeneming wordt beoordeeld (lid 4, art. 56a)",
+            patronen: ["noodzaak", "56a", "vrijheidsbeneming", "proportion", "subsidiar", "evenredig", "lichtste"],
+            toelichting:
+              "Art. 53 lid 4 Sv: bij de voorgeleiding beoordeelt de hulpofficier of de officier van justitie de noodzaak van verdere vrijheidsbeneming op grond van art. 56a. Kies het lichtste middel dat het doel bereikt.",
+            bronIds: ["sv-53-4"],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export const getCasus = (id: string) => CASUS_POOL.find((c) => c.id === id);
