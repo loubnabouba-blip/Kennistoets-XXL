@@ -320,7 +320,7 @@ export const BRONNEN: BronArtikel[] = [
     artikel: "45",
     lid: "1",
     tekst:
-      "Het is personen die de leeftijd van 18 jaar nog niet hebben bereikt […] voor publiek toegankelijke plaatsen […] alcoholhoudende drank aanwezig te hebben […] anders dan om niet alcoholhoudende drank voor gebruik elders dan ter plaatse wordt verstrekt.",
+      "Het is personen die de leeftijd van 18 jaar nog niet hebben bereikt, verboden op voor publiek toegankelijke plaatsen alcoholhoudende drank aanwezig te hebben […] anders dan om niet alcoholhoudende drank voor gebruik elders dan ter plaatse wordt verstrekt.",
     volledig: false,
     peildatum: "2025-02-12",
     url: wettenUrl(ALCW, "45"),
